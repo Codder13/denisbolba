@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #0070f3;
+  --secondary-color: #ff6b6b;
+  --dark-color: #1a1a2e;
+  --light-color: #ffffff;
+  --max-width-7xl: 80rem; /* Equivalent to Tailwind's max-w-7xl */
+  --padding-4: 1rem; /* Equivalent to Tailwind's px-4 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+}
+
+@layer components {
+  .container {
+    max-width: var(--max-width-7xl);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--padding-4);
+    padding-right: var(--padding-4);
+  }
+
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    background-image: linear-gradient(
+      to right,
+      var(--primary-color),
+      var(--secondary-color)
+    );
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    to bottom,
+    var(--primary-color),
+    var(--secondary-color)
+  );
+  border-radius: 10px;
+}
+
+/* Animation Classes */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+/* Focus Styles */
+*:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.5);
+}
+
+/* Custom selection color */
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
