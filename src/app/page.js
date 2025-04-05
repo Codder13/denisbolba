@@ -12,7 +12,7 @@ export default function Home() {
       >
         <div className="text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-8">
-            My Awesome Presentation
+            My Awesome DenisBolba
           </h1>
           <p className="text-xl md:text-2xl mb-12">Created with Next.js</p>
           <p className="text-lg opacity-80 mt-16">
