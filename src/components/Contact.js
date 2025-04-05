@@ -195,8 +195,8 @@ const Contact = () => {
                   Message Sent!
                 </h3>
                 <p className="text-gray-400 mb-6">
-                  Thank you for reaching out. I'll get back to you as soon as
-                  possible.
+                  Thank you for reaching out. I&apos;ll get back to you as soon
+                  as possible.
                 </p>
                 <button
                   onClick={() => setSubmitStatus(null)}
