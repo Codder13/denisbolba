@@ -13,17 +13,31 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { icon: <FaGithub size={18} />, url: "https://github.com/denisbolba" },
+    {
+      icon: <FaGithub size={18} />,
+      url: "https://github.com/denisbolba",
+      label: "GitHub Profile",
+    },
     {
       icon: <FaLinkedinIn size={18} />,
       url: "https://linkedin.com/in/denisbolba",
+      label: "LinkedIn Profile",
     },
     {
       icon: <FaInstagram size={18} />,
       url: "https://instagram.com/denisbolba",
+      label: "Instagram Profile",
     },
-    { icon: <FaTwitter size={18} />, url: "https://twitter.com/denisbolba" },
-    { icon: <FaDribbble size={18} />, url: "https://dribbble.com/denisbolba" },
+    {
+      icon: <FaTwitter size={18} />,
+      url: "https://twitter.com/denisbolba",
+      label: "Twitter Profile",
+    },
+    {
+      icon: <FaDribbble size={18} />,
+      url: "https://dribbble.com/denisbolba",
+      label: "Dribbble Portfolio",
+    },
   ];
 
   const navLinks = [
@@ -88,6 +102,8 @@ const Footer = () => {
                   variants={itemVariants}
                   whileHover={{ y: -5 }}
                   whileTap={{ scale: 0.9 }}
+                  aria-label={link.label}
+                  title={link.label}
                 >
                   {link.icon}
                 </motion.a>
@@ -190,12 +206,13 @@ const Footer = () => {
       {/* Scroll to top button */}
       <motion.a
         href="#home"
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white shadow-lg z-50"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white shadow-lg z-50 group relative"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
         whileHover={{ y: -5 }}
         whileTap={{ scale: 0.9 }}
+        aria-label="Scroll to top"
       >
         <svg
           width="20"
@@ -203,6 +220,7 @@ const Footer = () => {
           viewBox="0 0 20 20"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
         >
           <path
             d="M10 3.33301L10 16.6663M10 3.33301L4.16669 9.16634M10 3.33301L15.8334 9.16634"
@@ -212,6 +230,9 @@ const Footer = () => {
             strokeLinejoin="round"
           />
         </svg>
+        <span className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-dark px-3 py-1 rounded text-xs whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none shadow-lg">
+          Scroll to top
+        </span>
       </motion.a>
     </footer>
   );

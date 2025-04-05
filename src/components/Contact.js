@@ -79,8 +79,8 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
           <p className="text-gray-400 max-w-xl mx-auto mt-6">
-            Let's work together to bring your vision to life. Feel free to reach
-            out for collaborations, consultations, or just to say hello.
+            Let&apos;s work together to bring your vision to life. Feel free to
+            reach out for collaborations, consultations, or just to say hello.
           </p>
         </motion.div>
 

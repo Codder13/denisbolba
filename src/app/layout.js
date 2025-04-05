@@ -7,12 +7,23 @@ export const metadata = {
   title: "Denis Bolba | Web Designer & Entrepreneur",
   description:
     "Personal website of Denis Bolba, entrepreneur and web designer from Oradea, Romania.",
+  keywords: "web design, entrepreneur, portfolio, Denis Bolba, web development",
 };
+
+// Determine if we're in development mode
+const isDevelopment = process.env.NODE_ENV === "development";
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={inter.className}>{children}</body>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="#1a1a2e" />
+      </head>
+      <body className={`${inter.className} ${isDevelopment ? "dev-mode" : ""}`}>
+        {children}
+        {isDevelopment && <div className="responsive-indicator" />}
+      </body>
     </html>
   );
 }

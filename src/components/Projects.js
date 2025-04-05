@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const projectsData = [
   {
@@ -9,6 +10,7 @@ const projectsData = [
     title: "E-commerce Website",
     category: "Web Design",
     image: "/images/project-1.jpg",
+    altText: "E-commerce website design mockup",
     description:
       "A fully responsive e-commerce website with modern design and seamless user experience.",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
@@ -19,6 +21,7 @@ const projectsData = [
     title: "Portfolio Site",
     category: "UI/UX",
     image: "/images/project-2.jpg",
+    altText: "Portfolio website for a photographer",
     description:
       "Creative portfolio website for a photographer with stunning image galleries and smooth transitions.",
     technologies: ["React", "GSAP", "Styled Components"],
@@ -29,6 +32,7 @@ const projectsData = [
     title: "Restaurant Booking App",
     category: "Web App",
     image: "/images/project-3.jpg",
+    altText: "Restaurant booking application interface",
     description:
       "Online booking system for restaurants with table reservation and menu management.",
     technologies: ["Next.js", "Node.js", "MongoDB"],
@@ -39,6 +43,7 @@ const projectsData = [
     title: "Travel Blog",
     category: "WordPress",
     image: "/images/project-4.jpg",
+    altText: "Travel blog website design",
     description:
       "Custom WordPress theme for a travel blog with advanced filtering and category management.",
     technologies: ["WordPress", "PHP", "JavaScript"],
@@ -49,6 +54,7 @@ const projectsData = [
     title: "Real Estate Platform",
     category: "Web App",
     image: "/images/project-5.jpg",
+    altText: "Real estate property listing platform",
     description:
       "Property listing website with advanced search filters and interactive maps.",
     technologies: ["React", "Redux", "Firebase"],
@@ -59,6 +65,7 @@ const projectsData = [
     title: "Fitness Tracker",
     category: "Mobile App",
     image: "/images/project-6.jpg",
+    altText: "Fitness tracking mobile app interface",
     description:
       "Mobile app design for tracking workouts, nutrition, and progress with data visualization.",
     technologies: ["Figma", "Adobe XD", "Sketch"],
@@ -164,8 +171,20 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-primary/20 to-secondary/20"></div>
                 <div className="absolute inset-0 bg-dark/60"></div>
                 <div className="w-full h-full bg-gray-800 flex items-center justify-center text-white">
-                  {/* Replace with actual image */}
-                  <span className="text-gradient font-bold">
+                  {/* Image with proper alt text */}
+                  <Image
+                    src={project.image}
+                    alt={project.altText}
+                    width={400}
+                    height={240}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                      e.target.nextSibling.style.display = "flex";
+                    }}
+                    priority={project.id <= 3} // Prioritize loading the first 3 images
+                  />
+                  <span className="text-gradient font-bold absolute inset-0 flex items-center justify-center bg-dark/70">
                     {project.title}
                   </span>
                 </div>
@@ -241,9 +260,10 @@ const Projects = () => {
         >
           <motion.a
             href="#"
-            className="inline-flex items-center bg-white/5 hover:bg-white/10 text-white px-6 py-3 rounded-full font-medium transition-all duration-300"
+            className="inline-flex items-center bg-white/5 hover:bg-white/10 text-white px-8 py-3 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-white/10 transform hover:-translate-y-1"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="View all projects in portfolio"
           >
             View All Projects
             <svg
@@ -252,6 +272,7 @@ const Projects = () => {
               stroke="currentColor"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
             >
               <path
                 strokeLinecap="round"

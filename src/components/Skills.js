@@ -73,9 +73,9 @@ const Skills = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
           <p className="text-gray-400 max-w-xl mx-auto mt-6">
-            I've developed a wide range of skills throughout my journey as a web
-            designer and entrepreneur. Here's a glimpse of my technical
-            expertise.
+            I&apos;ve developed a wide range of skills throughout my journey as
+            a web designer and entrepreneur. Here&apos;s a glimpse of my
+            technical expertise.
           </p>
         </motion.div>
 
