@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1a1a2e" />
+        <meta name="theme-color" content="#1c1c1c" />
       </head>
       <body className={`${inter.className} ${isDevelopment ? "dev-mode" : ""}`}>
         {children}

@@ -71,7 +71,7 @@ const Header = () => {
     <motion.header
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-dark/90 backdrop-blur-md shadow-lg py-2"
+          ? "bg-dark/70 backdrop-blur-md shadow-lg py-2"
           : "bg-transparent py-4"
       }`}
       initial={{ opacity: 0 }}
@@ -229,7 +229,7 @@ const Header = () => {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <motion.div
-            className="absolute top-full left-0 w-full bg-dark/95 backdrop-blur-md shadow-lg py-4 md:hidden"
+            className="absolute top-full left-0 w-full bg-dark/70 backdrop-blur-md shadow-lg py-4 md:hidden"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}

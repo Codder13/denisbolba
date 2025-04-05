@@ -162,8 +162,8 @@ const Hero = () => {
               y2="450"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#0070F3" />
-              <stop offset="1" stopColor="#FF6B6B" />
+              <stop stopColor="#6c7a89" />
+              <stop offset="1" stopColor="#424e5a" />
             </linearGradient>
             <linearGradient
               id="paint1_linear"
@@ -173,8 +173,8 @@ const Hero = () => {
               y2="500"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#0070F3" />
-              <stop offset="1" stopColor="#FF6B6B" />
+              <stop stopColor="#6c7a89" />
+              <stop offset="1" stopColor="#424e5a" />
             </linearGradient>
             <linearGradient
               id="paint2_linear"
@@ -184,8 +184,8 @@ const Hero = () => {
               y2="550"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#0070F3" />
-              <stop offset="1" stopColor="#FF6B6B" />
+              <stop stopColor="#6c7a89" />
+              <stop offset="1" stopColor="#424e5a" />
             </linearGradient>
             <linearGradient
               id="paint3_linear"
@@ -195,8 +195,8 @@ const Hero = () => {
               y2="400"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#0070F3" />
-              <stop offset="1" stopColor="#FF6B6B" />
+              <stop stopColor="#6c7a89" />
+              <stop offset="1" stopColor="#424e5a" />
             </linearGradient>
           </defs>
         </svg>
