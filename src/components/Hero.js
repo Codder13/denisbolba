@@ -207,7 +207,7 @@ const Hero = () => {
                     />
                   </svg>
                 </span>
-                <span className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="absolute inset-0 bg-gradient-custom opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </motion.a>
               <motion.a
                 href="#projects"
@@ -296,7 +296,7 @@ const Hero = () => {
               >
                 {/* Abstract design elements */}
                 <div className="absolute top-[10%] right-[20%] w-24 h-24 rounded-lg bg-gradient-custom rotate-12 blur-sm opacity-80"></div>
-                <div className="absolute bottom-[20%] left-[15%] w-16 h-16 rounded-full bg-gradient-to-r from-secondary to-primary blur-sm opacity-70"></div>
+                <div className="absolute bottom-[20%] left-[15%] w-16 h-16 rounded-full bg-gradient-custom blur-sm opacity-70"></div>
 
                 {/* Code window mockup */}
                 <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[80%] h-[60%] bg-dark/80 backdrop-blur-xl rounded-xl border border-white/10 overflow-hidden shadow-2xl">
