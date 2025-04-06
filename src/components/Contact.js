@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
@@ -14,10 +14,22 @@ const Contact = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [focusedField, setFocusedField] = useState(null);
+
+  const formRef = useRef(null);
+  const isInView = useInView(formRef, { once: true, amount: 0.3 });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleFocus = (fieldName) => {
+    setFocusedField(fieldName);
+  };
+
+  const handleBlur = () => {
+    setFocusedField(null);
   };
 
   const handleSubmit = async (e) => {
@@ -62,11 +74,79 @@ const Contact = () => {
 
   return (
     <section id="contact" className="py-20 bg-dark relative overflow-hidden">
-      {/* Decorative elements */}
-      <div className="absolute -left-40 top-0 w-80 h-80 rounded-full bg-primary/10 blur-3xl"></div>
-      <div className="absolute -right-40 bottom-0 w-80 h-80 rounded-full bg-secondary/10 blur-3xl"></div>
+      {/* Enhanced decorative elements */}
+      <div className="absolute -left-40 top-0 w-[500px] h-[500px] rounded-full bg-gradient-to-tr from-primary/20 to-transparent blur-[120px] animate-pulse-slow"></div>
+      <div className="absolute -right-40 bottom-0 w-[500px] h-[500px] rounded-full bg-gradient-to-bl from-secondary/20 to-transparent blur-[120px] animate-pulse-slow"></div>
 
-      <div className="container mx-auto px-4">
+      {/* Grid pattern background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]"></div>
+
+      {/* Animated shapes */}
+      <motion.div
+        className="absolute right-10 bottom-20 w-20 h-20 opacity-10 hidden lg:block"
+        animate={{ rotate: -360 }}
+        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+      >
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="50"
+            cy="50"
+            r="45"
+            stroke="url(#contactGrad1)"
+            strokeWidth="2"
+          />
+          <defs>
+            <linearGradient
+              id="contactGrad1"
+              x1="0"
+              y1="0"
+              x2="100"
+              y2="100"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#ffffff" />
+              <stop offset="1" stopColor="#6c7a89" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </motion.div>
+
+      <motion.div
+        className="absolute left-10 top-40 w-16 h-16 opacity-10 hidden lg:block"
+        animate={{ rotate: 360 }}
+        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+      >
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M50 0L93.3 25V75L50 100L6.7 75V25L50 0Z"
+            stroke="url(#contactGrad2)"
+            strokeWidth="2"
+          />
+          <defs>
+            <linearGradient
+              id="contactGrad2"
+              x1="0"
+              y1="0"
+              x2="100"
+              y2="100"
+              gradientUnits="userSpaceOnUse"
+            >
+              <stop stopColor="#ffffff" />
+              <stop offset="1" stopColor="#6c7a89" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </motion.div>
+
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 20 }}
@@ -74,8 +154,14 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Get in <span className="text-gradient">Touch</span>
+          <span className="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-primary/90 text-sm font-medium inline-block mb-4">
+            Let's talk
+          </span>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            Get in{" "}
+            <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+              Touch
+            </span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
           <p className="text-gray-400 max-w-xl mx-auto mt-6">
@@ -84,8 +170,8 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-          {/* Contact Info */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          {/* Contact Info Cards */}
           <div className="lg:col-span-1">
             <motion.div
               className="space-y-8"
@@ -95,90 +181,173 @@ const Contact = () => {
               variants={formVariants}
             >
               <motion.div
-                className="flex items-start space-x-4"
+                className="group bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-all duration-300 relative overflow-hidden"
                 variants={itemVariants}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <FaEnvelope size={20} />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-1">
-                    Email
-                  </h4>
-                  <p className="text-gray-400">contact@denisbolba.com</p>
-                  <a
-                    href="mailto:contact@denisbolba.com"
-                    className="text-primary hover:underline text-sm"
-                  >
-                    Send an email
-                  </a>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <div className="flex items-start space-x-5">
+                  <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary shrink-0 group-hover:bg-primary/30 transition-colors duration-300">
+                    <FaEnvelope
+                      size={20}
+                      className="group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">
+                      Email
+                    </h4>
+                    <p className="text-gray-400 mb-2">contact@denisbolba.com</p>
+                    <a
+                      href="mailto:contact@denisbolba.com"
+                      className="text-primary hover:text-secondary transition-colors duration-300 text-sm flex items-center group-hover:translate-x-1 transform transition-transform"
+                    >
+                      Send an email
+                      <svg
+                        className="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </motion.div>
 
               <motion.div
-                className="flex items-start space-x-4"
+                className="group bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-all duration-300 relative overflow-hidden"
                 variants={itemVariants}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <FaPhone size={20} />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-1">
-                    Phone
-                  </h4>
-                  <p className="text-gray-400">+40 772 266 156</p>
-                  <a
-                    href="tel:+40772266156"
-                    className="text-primary hover:underline text-sm"
-                  >
-                    Call me
-                  </a>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <div className="flex items-start space-x-5">
+                  <div className="w-12 h-12 bg-secondary/20 rounded-lg flex items-center justify-center text-secondary shrink-0 group-hover:bg-secondary/30 transition-colors duration-300">
+                    <FaPhone
+                      size={20}
+                      className="group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">
+                      Phone
+                    </h4>
+                    <p className="text-gray-400 mb-2">+40 772 266 156</p>
+                    <a
+                      href="tel:+40772266156"
+                      className="text-secondary hover:text-primary transition-colors duration-300 text-sm flex items-center group-hover:translate-x-1 transform transition-transform"
+                    >
+                      Call me
+                      <svg
+                        className="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </motion.div>
 
               <motion.div
-                className="flex items-start space-x-4"
+                className="group bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm p-6 rounded-xl border border-white/10 hover:border-primary/30 transition-all duration-300 relative overflow-hidden"
+                variants={itemVariants}
+                whileHover={{ y: -5, transition: { duration: 0.3 } }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                <div className="flex items-start space-x-5">
+                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center text-white shrink-0 group-hover:from-primary/30 group-hover:to-secondary/30 transition-colors duration-300">
+                    <FaMapMarkerAlt
+                      size={20}
+                      className="group-hover:scale-110 transition-transform duration-300"
+                    />
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-white mb-1">
+                      Location
+                    </h4>
+                    <p className="text-gray-400 mb-2">Oradea, Romania</p>
+                    <a
+                      href="https://maps.google.com/?q=Oradea,Romania"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-secondary transition-colors duration-300 text-sm flex items-center group-hover:translate-x-1 transform transition-transform"
+                    >
+                      View on map
+                      <svg
+                        className="w-4 h-4 ml-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M14 5l7 7m0 0l-7 7m7-7H3"
+                        ></path>
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Social media grid */}
+              <motion.div
+                className="grid grid-cols-4 gap-4 mt-8"
                 variants={itemVariants}
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary shrink-0">
-                  <FaMapMarkerAlt size={20} />
-                </div>
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-1">
-                    Location
-                  </h4>
-                  <p className="text-gray-400">Oradea, Romania</p>
-                  <a
-                    href="https://maps.google.com/?q=Oradea,Romania"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:underline text-sm"
-                  >
-                    View on map
-                  </a>
-                </div>
+                {["twitter", "instagram", "linkedin", "github"].map(
+                  (social) => (
+                    <motion.a
+                      key={social}
+                      href={`https://${social}.com/denisbolba`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary/20 hover:text-primary hover:border-primary/30 border border-white/10 transition-all duration-300"
+                      whileHover={{ y: -5, scale: 1.1 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span className="sr-only">{social}</span>
+                      <i className={`fab fa-${social}`}></i>
+                    </motion.a>
+                  )
+                )}
               </motion.div>
             </motion.div>
           </div>
 
-          {/* Contact Form */}
+          {/* Enhanced Contact Form */}
           <motion.div
-            className="lg:col-span-2 bg-white/5 backdrop-blur-sm p-8 rounded-2xl border border-white/10"
+            ref={formRef}
+            className="lg:col-span-2 bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-lg p-8 md:p-10 rounded-2xl border border-white/10 shadow-xl"
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
             transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
           >
             {submitStatus === "success" ? (
               <motion.div
-                className="h-full flex flex-col items-center justify-center text-center p-6"
+                className="h-full flex flex-col items-center justify-center text-center py-10"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mb-4">
+                <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mb-6">
                   <svg
-                    className="w-8 h-8 text-green-500"
+                    className="w-10 h-10 text-green-500"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -191,71 +360,88 @@ const Contact = () => {
                     ></path>
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-2">
-                  Message Sent!
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Message Sent Successfully!
                 </h3>
-                <p className="text-gray-400 mb-6">
+                <p className="text-gray-300 mb-8 max-w-md">
                   Thank you for reaching out. I&apos;ll get back to you as soon
-                  as possible.
+                  as possible. Looking forward to our conversation!
                 </p>
-                <button
+                <motion.button
                   onClick={() => setSubmitStatus(null)}
-                  className="inline-flex items-center text-sm bg-primary hover:bg-primary/90 text-white px-6 py-3 rounded-full font-medium"
+                  className="inline-flex items-center text-sm bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-primary/30 transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
                 >
                   Send Another Message
-                </button>
+                </motion.button>
               </motion.div>
             ) : (
               <motion.form
                 onSubmit={handleSubmit}
                 variants={formVariants}
                 initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
+                animate={isInView ? "visible" : "hidden"}
                 className="space-y-6"
               >
-                <motion.div variants={itemVariants}>
-                  <label
-                    htmlFor="name"
-                    className="block text-sm font-medium text-gray-300 mb-2"
-                  >
-                    Your Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-primary focus:border-primary text-white"
-                    placeholder="John Doe"
-                  />
-                </motion.div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <motion.div variants={itemVariants} className="relative">
+                    <label
+                      htmlFor="name"
+                      className={`absolute left-4 transition-all duration-300 ${
+                        focusedField === "name" || formData.name
+                          ? "-top-2.5 text-xs text-primary"
+                          : "top-3.5 text-sm text-gray-400"
+                      }`}
+                    >
+                      Your Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      value={formData.name}
+                      onChange={handleChange}
+                      onFocus={() => handleFocus("name")}
+                      onBlur={handleBlur}
+                      className="w-full px-4 pt-3.5 pb-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 text-white transition-all duration-300"
+                    />
+                  </motion.div>
 
-                <motion.div variants={itemVariants}>
-                  <label
-                    htmlFor="email"
-                    className="block text-sm font-medium text-gray-300 mb-2"
-                  >
-                    Your Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-primary focus:border-primary text-white"
-                    placeholder="john@example.com"
-                  />
-                </motion.div>
+                  <motion.div variants={itemVariants} className="relative">
+                    <label
+                      htmlFor="email"
+                      className={`absolute left-4 transition-all duration-300 ${
+                        focusedField === "email" || formData.email
+                          ? "-top-2.5 text-xs text-primary"
+                          : "top-3.5 text-sm text-gray-400"
+                      }`}
+                    >
+                      Your Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      required
+                      value={formData.email}
+                      onChange={handleChange}
+                      onFocus={() => handleFocus("email")}
+                      onBlur={handleBlur}
+                      className="w-full px-4 pt-3.5 pb-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 text-white transition-all duration-300"
+                    />
+                  </motion.div>
+                </div>
 
-                <motion.div variants={itemVariants}>
+                <motion.div variants={itemVariants} className="relative">
                   <label
                     htmlFor="subject"
-                    className="block text-sm font-medium text-gray-300 mb-2"
+                    className={`absolute left-4 transition-all duration-300 ${
+                      focusedField === "subject" || formData.subject
+                        ? "-top-2.5 text-xs text-primary"
+                        : "top-3.5 text-sm text-gray-400"
+                    }`}
                   >
                     Subject
                   </label>
@@ -266,15 +452,20 @@ const Contact = () => {
                     required
                     value={formData.subject}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-primary focus:border-primary text-white"
-                    placeholder="Project Inquiry"
+                    onFocus={() => handleFocus("subject")}
+                    onBlur={handleBlur}
+                    className="w-full px-4 pt-3.5 pb-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 text-white transition-all duration-300"
                   />
                 </motion.div>
 
-                <motion.div variants={itemVariants}>
+                <motion.div variants={itemVariants} className="relative">
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-300 mb-2"
+                    className={`absolute left-4 transition-all duration-300 ${
+                      focusedField === "message" || formData.message
+                        ? "-top-2.5 text-xs text-primary"
+                        : "top-3.5 text-sm text-gray-400"
+                    }`}
                   >
                     Your Message
                   </label>
@@ -284,21 +475,76 @@ const Contact = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
+                    onFocus={() => handleFocus("message")}
+                    onBlur={handleBlur}
                     rows={5}
-                    className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:ring-primary focus:border-primary text-white"
-                    placeholder="Hello, I'd like to discuss a project..."
+                    className="w-full px-4 pt-3.5 pb-3 bg-white/5 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary/50 focus:border-primary/50 text-white transition-all duration-300 resize-none"
                   />
                 </motion.div>
 
                 <motion.button
                   type="submit"
-                  className="w-full py-3 px-6 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-lg transition-transform transform hover:-translate-y-1 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 disabled:opacity-70"
+                  className="w-full py-4 px-6 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-xl transition-all shadow-lg hover:shadow-primary/30 relative overflow-hidden group"
+                  variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   disabled={isSubmitting}
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  <span className="relative z-10 flex items-center justify-center">
+                    {isSubmitting ? (
+                      <div className="flex items-center">
+                        <svg
+                          className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Sending...
+                      </div>
+                    ) : (
+                      <>
+                        Send Message
+                        <svg
+                          className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          ></path>
+                        </svg>
+                      </>
+                    )}
+                  </span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </motion.button>
+
+                {/* Form footer message */}
+                <motion.p
+                  variants={itemVariants}
+                  className="text-center text-gray-400 text-xs mt-4"
+                >
+                  Your information is secure and will never be shared with third
+                  parties.
+                </motion.p>
               </motion.form>
             )}
           </motion.div>
