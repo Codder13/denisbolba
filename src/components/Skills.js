@@ -40,7 +40,8 @@ const SkillBar = ({ name, percentage, index }) => {
 
 const Skills = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.3 });
+  const skillsRef = useRef(null);
+  const isInView = useInView(skillsRef, { once: true, amount: 0.3 });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -98,10 +99,12 @@ const Skills = () => {
         </div>
 
         <motion.div
+          ref={skillsRef}
           className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8"
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "show" : "hidden"}
+          whileInView="show"
+          viewport={{ once: true, amount: 0.3 }}
         >
           <motion.div
             className="bg-dark/50 backdrop-blur-lg border border-white/10 rounded-xl p-6 hover:border-primary/30 transition-all duration-300"
