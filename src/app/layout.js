@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1c1c1c" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body className={`${inter.className} ${isDevelopment ? "dev-mode" : ""}`}>
         {children}
