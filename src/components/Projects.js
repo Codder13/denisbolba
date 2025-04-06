@@ -160,11 +160,11 @@ const Projects = () => {
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Recent{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+            <span className="bg-gradient-custom text-transparent bg-clip-text">
               Projects
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-custom mx-auto"></div>
           <p className="text-gray-400 max-w-xl mx-auto mt-6">
             Explore my latest web design and development projects. Each project
             represents my passion for creating beautiful, functional digital
@@ -190,7 +190,7 @@ const Projects = () => {
               viewport={{ once: true }}
               className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 backdrop-blur-sm border ${
                 activeCategory === category
-                  ? "bg-gradient-to-r from-primary to-secondary text-white border-transparent shadow-lg"
+                  ? "bg-gradient-custom text-white border-transparent shadow-lg"
                   : "bg-white/5 text-gray-300 hover:bg-white/10 border-white/10 hover:border-white/30"
               }`}
               onClick={() => setActiveCategory(category)}
@@ -313,7 +313,7 @@ const Projects = () => {
 
                   <motion.a
                     href={project.link}
-                    className="inline-flex items-center text-sm font-medium bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text group/link relative self-start"
+                    className="inline-flex items-center text-sm font-medium bg-gradient-custom text-transparent bg-clip-text group/link relative self-start"
                     whileHover={{ x: 5 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -332,7 +332,7 @@ const Projects = () => {
                         d="M14 5l7 7m0 0l-7 7m7-7H3"
                       ></path>
                     </svg>
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover/link:w-full transition-all duration-300"></span>
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-custom group-hover/link:w-full transition-all duration-300"></span>
                   </motion.a>
                 </div>
 

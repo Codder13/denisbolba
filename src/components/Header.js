@@ -115,7 +115,7 @@ const Header = () => {
     >
       {/* Gradient border at the bottom */}
       <div
-        className={`absolute bottom-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent transition-opacity duration-500 ${
+        className={`absolute bottom-0 left-0 w-full h-[1px] bg-gradient-custom transition-opacity duration-500 ${
           scrolled ? "opacity-100" : "opacity-0"
         }`}
       ></div>
@@ -129,10 +129,10 @@ const Header = () => {
           href="#home"
           aria-label="Go to home section"
         >
-          <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+          <span className="bg-gradient-custom text-transparent bg-clip-text">
             Denis Bolba
           </span>
-          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-custom group-hover:w-full transition-all duration-300"></span>
         </motion.a>
 
         {/* Desktop Navigation */}
@@ -170,7 +170,7 @@ const Header = () => {
           <motion.a
             variants={itemVariants}
             href="#contact"
-            className="ml-2 px-5 py-2 text-sm font-medium bg-gradient-to-r from-primary to-secondary text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5"
+            className="ml-2 px-5 py-2 text-sm font-medium bg-gradient-custom text-white rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -267,7 +267,7 @@ const Header = () => {
                 ))}
                 <motion.a
                   href="#contact"
-                  className="mt-4 px-8 py-3 text-base font-medium bg-gradient-to-r from-primary to-secondary text-white rounded-full"
+                  className="mt-4 px-8 py-3 text-base font-medium bg-gradient-custom text-white rounded-full"
                   onClick={() => setMobileMenuOpen(false)}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

@@ -154,13 +154,13 @@ const Footer = () => {
           <motion.div variants={itemVariants}>
             <div className="mb-6">
               <motion.div
-                className="text-3xl font-bold mb-2 inline-block bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text"
+                className="text-3xl font-bold mb-2 inline-block text-gradient"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 400 }}
               >
                 Denis Bolba
               </motion.div>
-              <div className="w-12 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+              <div className="w-12 h-1 bg-gradient-custom rounded-full"></div>
             </div>
             <p className="text-gray-400 mb-8">
               Web designer and entrepreneur from Oradea, Romania. Creating
@@ -271,7 +271,7 @@ const Footer = () => {
           {/* Newsletter Column */}
           <motion.div variants={itemVariants}>
             <h3 className="text-xl font-semibold text-white mb-6 flex items-center">
-              <span className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-secondary mr-2"></span>
+              <span className="w-2 h-2 rounded-full bg-gradient-custom mr-2"></span>
               Newsletter
             </h3>
             <p className="text-gray-400 mb-6">
@@ -286,7 +286,7 @@ const Footer = () => {
               />
               <motion.button
                 type="submit"
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-secondary text-white"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 w-9 h-9 flex items-center justify-center rounded-full bg-gradient-custom text-white"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
@@ -357,7 +357,7 @@ const Footer = () => {
       {/* Enhanced Scroll to top button */}
       <motion.a
         href="#home"
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center text-white shadow-lg z-50 group relative"
+        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-custom rounded-full flex items-center justify-center text-white shadow-lg z-50 group relative"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}

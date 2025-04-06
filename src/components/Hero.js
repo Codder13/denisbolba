@@ -186,7 +186,7 @@ const Hero = () => {
             >
               <motion.a
                 href="#contact"
-                className="group relative bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-primary/50 overflow-hidden"
+                className="group relative bg-gradient-custom text-white px-8 py-4 rounded-full font-medium transition-all duration-300 shadow-lg hover:shadow-primary/50 overflow-hidden"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Contact me"
@@ -295,7 +295,7 @@ const Hero = () => {
                 animate={floatingAnimation}
               >
                 {/* Abstract design elements */}
-                <div className="absolute top-[10%] right-[20%] w-24 h-24 rounded-lg bg-gradient-to-r from-primary to-secondary rotate-12 blur-sm opacity-80"></div>
+                <div className="absolute top-[10%] right-[20%] w-24 h-24 rounded-lg bg-gradient-custom rotate-12 blur-sm opacity-80"></div>
                 <div className="absolute bottom-[20%] left-[15%] w-16 h-16 rounded-full bg-gradient-to-r from-secondary to-primary blur-sm opacity-70"></div>
 
                 {/* Code window mockup */}

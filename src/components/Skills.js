@@ -147,11 +147,11 @@ const Skills = () => {
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Professional{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+            <span className="bg-gradient-custom text-transparent bg-clip-text">
               Skills
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-custom mx-auto"></div>
           <p className="text-gray-400 max-w-xl mx-auto mt-6">
             I&apos;ve developed a wide range of skills throughout my journey as
             a web designer and entrepreneur. Here&apos;s a glimpse of my

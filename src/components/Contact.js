@@ -159,11 +159,11 @@ const Contact = () => {
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Get in{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+            <span className="bg-gradient-custom text-transparent bg-clip-text">
               Touch
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-custom mx-auto"></div>
           <p className="text-gray-400 max-w-xl mx-auto mt-6">
             Let&apos;s work together to bring your vision to life. Feel free to
             reach out for collaborations, consultations, or just to say hello.
@@ -269,7 +269,7 @@ const Contact = () => {
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                 <div className="flex items-start space-x-5">
-                  <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center text-white shrink-0 group-hover:from-primary/30 group-hover:to-secondary/30 transition-colors duration-300">
+                  <div className="w-12 h-12 bg-gradient-custom rounded-lg flex items-center justify-center text-white shrink-0 group-hover:from-primary/30 group-hover:to-secondary/30 transition-colors duration-300">
                     <FaMapMarkerAlt
                       size={20}
                       className="group-hover:scale-110 transition-transform duration-300"
@@ -369,7 +369,7 @@ const Contact = () => {
                 </p>
                 <motion.button
                   onClick={() => setSubmitStatus(null)}
-                  className="inline-flex items-center text-sm bg-gradient-to-r from-primary to-secondary hover:opacity-90 text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-primary/30 transition-all duration-300"
+                  className="inline-flex items-center text-sm bg-gradient-custom hover:opacity-90 text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-primary/30 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -484,7 +484,7 @@ const Contact = () => {
 
                 <motion.button
                   type="submit"
-                  className="w-full py-4 px-6 bg-gradient-to-r from-primary to-secondary text-white font-medium rounded-xl transition-all shadow-lg hover:shadow-primary/30 relative overflow-hidden group"
+                  className="w-full py-4 px-6 bg-gradient-custom text-white font-medium rounded-xl transition-all shadow-lg hover:shadow-primary/30 relative overflow-hidden group"
                   variants={itemVariants}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
@@ -534,7 +534,7 @@ const Contact = () => {
                       </>
                     )}
                   </span>
-                  <span className="absolute inset-0 bg-gradient-to-r from-secondary to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="absolute inset-0 bg-gradient-custom opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                 </motion.button>
 
                 {/* Form footer message */}

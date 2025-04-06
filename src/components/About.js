@@ -102,11 +102,11 @@ const About = () => {
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             About{" "}
-            <span className="bg-gradient-to-r from-primary to-secondary text-transparent bg-clip-text">
+            <span className="bg-gradient-custom text-transparent bg-clip-text">
               Me
             </span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-custom mx-auto"></div>
         </motion.div>
 
         <div
@@ -219,7 +219,7 @@ const About = () => {
 
             <motion.a
               href="#contact"
-              className="group inline-flex items-center bg-gradient-to-r from-primary to-secondary text-white px-8 py-4 rounded-full font-medium shadow-lg hover:shadow-primary/30 transition-all duration-300 relative overflow-hidden"
+              className="group inline-flex items-center bg-gradient-custom text-white px-8 py-4 rounded-full font-medium shadow-lg hover:shadow-primary/30 transition-all duration-300 relative overflow-hidden"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               initial={{ opacity: 0 }}
