@@ -126,9 +126,9 @@ const Contact = () => {
                   <h4 className="text-lg font-semibold text-white mb-1">
                     Phone
                   </h4>
-                  <p className="text-gray-400">+40 700 000 000</p>
+                  <p className="text-gray-400">+40 772 266 156</p>
                   <a
-                    href="tel:+40700000000"
+                    href="tel:+40772266156"
                     className="text-primary hover:underline text-sm"
                   >
                     Call me

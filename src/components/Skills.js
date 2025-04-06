@@ -10,7 +10,7 @@ const skills = [
   { name: "JavaScript", percentage: 85 },
   { name: "React.js", percentage: 80 },
   { name: "Next.js", percentage: 85 },
-  { name: "WordPress", percentage: 75 },
+  { name: "WordPress", percentage: 100 },
   { name: "Figma", percentage: 90 },
 ];
 
@@ -21,13 +21,17 @@ const SkillBar = ({ name, percentage, index }) => {
         <h4 className="text-white font-medium">{name}</h4>
         <span className="text-gray-400">{percentage}%</span>
       </div>
-      <div className="h-2 w-full bg-gray-700 rounded-full overflow-hidden">
+      <div className="h-2 w-full bg-gray-800 rounded-full overflow-hidden">
         <motion.div
-          className="h-full bg-gradient-to-r from-primary to-secondary"
+          className="h-full"
           initial={{ width: 0 }}
           whileInView={{ width: `${percentage}%` }}
           transition={{ duration: 1, delay: index * 0.1 }}
           viewport={{ once: true }}
+          style={{
+            background:
+              "linear-gradient(to right, var(--primary-color), var(--secondary-color))",
+          }}
         />
       </div>
     </div>
