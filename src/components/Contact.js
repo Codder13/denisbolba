@@ -155,7 +155,7 @@ const Contact = () => {
           viewport={{ once: true }}
         >
           <span className="px-4 py-1 rounded-full bg-white/5 border border-white/10 text-primary/90 text-sm font-medium inline-block mb-4">
-            Let's talk
+            Let&apos;s talk
           </span>
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Get in{" "}

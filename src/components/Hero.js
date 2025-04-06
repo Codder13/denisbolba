@@ -113,7 +113,7 @@ const Hero = () => {
               transition={{ duration: 0.6, type: "spring" }}
             >
               <span className="px-4 py-2 bg-white/5 backdrop-blur-lg border border-white/10 rounded-full text-sm text-primary font-medium flex items-center gap-2">
-                <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span className="inline-block w-2 h-2 rounded-full bg-primary animate-pulse opacity-100"></span>
                 Available for freelance work
               </span>
             </motion.div>
@@ -312,7 +312,7 @@ const Hero = () => {
                   {/* Code content */}
                   <div className="p-4 text-xs font-mono">
                     <div className="text-green-500 mb-1">
-                      // Web developer and designer
+                      / Web developer and designer
                     </div>
                     <div>
                       <span className="text-purple-400">function</span>{" "}
@@ -324,17 +324,26 @@ const Hero = () => {
                     <div className="pl-4">
                       <span className="text-purple-400">const</span>{" "}
                       <span className="text-blue-400">design</span> ={" "}
-                      <span className="text-orange-400">"modern"</span>;
+                      <span className="text-orange-400">
+                        &quot;modern&quot;
+                      </span>
+                      ;
                     </div>
                     <div className="pl-4">
                       <span className="text-purple-400">const</span>{" "}
                       <span className="text-blue-400">tech</span> ={" "}
-                      <span className="text-orange-400">"cutting-edge"</span>;
+                      <span className="text-orange-400">
+                        &quot;cutting-edge&quot;
+                      </span>
+                      ;
                     </div>
                     <div className="pl-4">
                       <span className="text-purple-400">const</span>{" "}
                       <span className="text-blue-400">results</span> ={" "}
-                      <span className="text-orange-400">"exceptional"</span>;
+                      <span className="text-orange-400">
+                        &quot;exceptional&quot;
+                      </span>
+                      ;
                     </div>
                     <div className="pl-4">
                       <span className="text-purple-400">return</span> {`{`}{" "}
@@ -347,7 +356,7 @@ const Hero = () => {
                       createAmazingWebsite();
                     </div>
                     <div className="text-green-500 mt-1">
-                      // Let's build something amazing together
+                      / Let&apos;s build something amazing together
                     </div>
                   </div>
                 </div>

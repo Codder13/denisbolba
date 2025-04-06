@@ -358,6 +358,7 @@ const Footer = () => {
       <motion.a
         href="#home"
         className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-custom rounded-full flex items-center justify-center text-white shadow-lg z-50 group relative"
+        style={{ position: "fixed", bottom: "2rem", right: "2rem" }} // Explicitly set position with inline style
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.3 }}
