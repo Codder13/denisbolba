@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import {
   FaGithub,
-  FaLinkedinIn,
+  FaYoutube,
   FaInstagram,
   FaTwitter,
   FaDribbble,
@@ -15,28 +15,18 @@ const Footer = () => {
   const socialLinks = [
     {
       icon: <FaGithub size={18} />,
-      url: "https://github.com/denisbolba",
+      url: "https://github.com/Codder13",
       label: "GitHub Profile",
     },
     {
-      icon: <FaLinkedinIn size={18} />,
-      url: "https://linkedin.com/in/denisbolba",
-      label: "LinkedIn Profile",
+      icon: <FaYoutube size={18} />,
+      url: "https://youtube.com/@denisbolba",
+      label: "YouTube Channel",
     },
     {
       icon: <FaInstagram size={18} />,
       url: "https://instagram.com/denisbolba",
       label: "Instagram Profile",
-    },
-    {
-      icon: <FaTwitter size={18} />,
-      url: "https://twitter.com/denisbolba",
-      label: "Twitter Profile",
-    },
-    {
-      icon: <FaDribbble size={18} />,
-      url: "https://dribbble.com/denisbolba",
-      label: "Dribbble Portfolio",
     },
   ];
 

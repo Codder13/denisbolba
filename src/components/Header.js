@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -157,7 +157,7 @@ const Header = () => {
         {/* Social Icons */}
         <div className="hidden md:flex items-center space-x-8 ml-12">
           <motion.a
-            href="https://github.com/denisbolba"
+            href="https://github.com/Codder13"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2 }}
@@ -169,16 +169,16 @@ const Header = () => {
             <FaGithub size={20} />
           </motion.a>
           <motion.a
-            href="https://linkedin.com/in/denisbolba"
+            href="https://youtube.com/@denisbolba"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.9 }}
             className="text-white hover:text-primary transition-colors"
-            aria-label="LinkedIn Profile"
-            title="LinkedIn Profile"
+            aria-label="YouTube Channel"
+            title="YouTube Channel"
           >
-            <FaLinkedinIn size={20} />
+            <FaYoutube size={20} />
           </motion.a>
           <motion.a
             href="https://instagram.com/denisbolba"
@@ -304,14 +304,14 @@ const Header = () => {
                   <FaGithub size={20} />
                 </a>
                 <a
-                  href="https://linkedin.com/in/denisbolba"
+                  href="https://youtube.com/@denisbolba"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-white hover:text-primary transition-colors"
-                  aria-label="LinkedIn Profile"
-                  title="LinkedIn Profile"
+                  aria-label="YouTube Channel"
+                  title="YouTube Channel"
                 >
-                  <FaLinkedinIn size={20} />
+                  <FaYoutube size={20} />
                 </a>
                 <a
                   href="https://instagram.com/denisbolba"
