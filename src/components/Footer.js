@@ -35,18 +35,18 @@ const Footer = () => {
       label: "Instagram Profile",
       color: "hover:bg-purple-600/20 hover:text-purple-500",
     },
-    {
-      icon: <FaLinkedinIn size={18} />,
-      url: "https://linkedin.com/in/denisbolba",
-      label: "LinkedIn Profile",
-      color: "hover:bg-blue-600/20 hover:text-blue-500",
-    },
-    {
-      icon: <FaDribbble size={18} />,
-      url: "https://dribbble.com/denisbolba",
-      label: "Dribbble Profile",
-      color: "hover:bg-pink-600/20 hover:text-pink-500",
-    },
+    // {
+    //   icon: <FaLinkedinIn size={18} />,
+    //   url: "https://linkedin.com/in/denisbolba",
+    //   label: "LinkedIn Profile",
+    //   color: "hover:bg-blue-600/20 hover:text-blue-500",
+    // },
+    // {
+    //   icon: <FaDribbble size={18} />,
+    //   url: "https://dribbble.com/denisbolba",
+    //   label: "Dribbble Profile",
+    //   color: "hover:bg-pink-600/20 hover:text-pink-500",
+    // },
   ];
 
   const navLinks = [

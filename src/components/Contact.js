@@ -2,7 +2,17 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { FaEnvelope, FaPhone, FaMapMarkerAlt } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaGithub,
+  FaYoutube,
+  FaInstagram,
+  FaTwitter,
+  FaLinkedinIn,
+  FaDribbble,
+} from "react-icons/fa";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -70,6 +80,50 @@ const Contact = () => {
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
+
+  const socialLinks = [
+    {
+      icon: <FaGithub size={18} />,
+      url: "https://github.com/Codder13",
+      label: "GitHub Profile",
+      color: "hover:bg-gray-800 hover:text-white",
+    },
+    {
+      icon: <FaYoutube size={18} />,
+      url: "https://youtube.com/@denisbolba",
+      label: "YouTube Channel",
+      color: "hover:bg-red-600/20 hover:text-red-500",
+    },
+    {
+      icon: <FaInstagram size={18} />,
+      url: "https://instagram.com/denisbolba",
+      label: "Instagram Profile",
+      color: "hover:bg-purple-600/20 hover:text-purple-500",
+    },
+    // {
+    //   icon: <FaLinkedinIn size={18} />,
+    //   url: "https://linkedin.com/in/denisbolba",
+    //   label: "LinkedIn Profile",
+    //   color: "hover:bg-blue-600/20 hover:text-blue-500",
+    // },
+    // {
+    //   icon: <FaDribbble size={18} />,
+    //   url: "https://dribbble.com/denisbolba",
+    //   label: "Dribbble Profile",
+    //   color: "hover:bg-pink-600/20 hover:text-pink-500",
+    // },
+  ];
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2,
+      },
+    },
   };
 
   return (
@@ -306,26 +360,49 @@ const Contact = () => {
               </motion.div>
 
               {/* Social media grid */}
-              <motion.div
+              {/* <motion.div
                 className="grid grid-cols-4 gap-4 mt-8"
                 variants={itemVariants}
               >
-                {["twitter", "instagram", "linkedin", "github"].map(
-                  (social) => (
-                    <motion.a
-                      key={social}
-                      href={`https://${social}.com/denisbolba`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary/20 hover:text-primary hover:border-primary/30 border border-white/10 transition-all duration-300"
-                      whileHover={{ y: -5, scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span className="sr-only">{social}</span>
-                      <i className={`fab fa-${social}`}></i>
-                    </motion.a>
-                  )
-                )}
+                {/* {["twitter", "instagram", "linkedin", "github"].map( * /}
+                {["instagram", "github", "youtube"].map((social) => (
+                  <motion.a
+                    key={social}
+                    href={`https://${social}.com/denisbolba`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center text-white hover:bg-primary/20 hover:text-primary hover:border-primary/30 border border-white/10 transition-all duration-300"
+                    whileHover={{ y: -5, scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <span className="sr-only">{social}</span>
+                    <i className={`fab fa-${social}`}></i>
+                  </motion.a>
+                ))}
+              </motion.div> */}
+              <motion.div
+                className="flex flex-wrap gap-3"
+                variants={containerVariants}
+              >
+                {socialLinks.map((link, index) => (
+                  <motion.a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`w-10 h-10 rounded-full bg-white/5 backdrop-blur-sm flex items-center justify-center text-gray-300 transition-all duration-300 border border-white/5 ${link.color}`}
+                    variants={itemVariants}
+                    whileHover={{
+                      y: -5,
+                      boxShadow: "0 5px 15px rgba(0,0,0,0.1)",
+                    }}
+                    whileTap={{ scale: 0.9 }}
+                    aria-label={link.label}
+                    title={link.label}
+                  >
+                    {link.icon}
+                  </motion.a>
+                ))}
               </motion.div>
             </motion.div>
           </div>
