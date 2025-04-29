@@ -16,7 +16,10 @@ const isDevelopment = process.env.NODE_ENV === "development";
 
 export default function RootLayout({ children }) {
   return (
-    <PlausibleProvider domain="plausible.denisbolba.com">
+    <PlausibleProvider
+      domain="web.denisbolba.com"
+      customDomain="plausible.denisbolba.com"
+    >
       <html lang="en" className="scroll-smooth">
         {" "}
         <head>
