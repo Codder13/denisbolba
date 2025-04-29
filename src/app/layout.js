@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <PlausibleProvider
       domain="web.denisbolba.com"
-      customDomain="plausible.denisbolba.com"
+      customDomain="https://plausible.denisbolba.com"
     >
       <html lang="en" className="scroll-smooth">
         {" "}
