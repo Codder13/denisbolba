@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import PlausibleAnalytics from "../components/PlausibleAnalytics";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ const isDevelopment = process.env.NODE_ENV === "development";
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
+      {" "}
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#1c1c1c" />
@@ -25,14 +27,11 @@ export default function RootLayout({ children }) {
           data-domain="web.denisbolba.com"
           src="https://plausible-bo0og0skgc00oo8kwkg00occ.denisbolba.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
         ></script>
-        <script>
-          window.plausible = window.plausible || function(){" "}
-          {(window.plausible.q = window.plausible.q || []).push(arguments)}
-        </script>
-      </head>
+      </head>{" "}
       <body className={`${inter.className} ${isDevelopment ? "dev-mode" : ""}`}>
         {children}
         {isDevelopment && <div className="responsive-indicator" />}
+        <PlausibleAnalytics />
       </body>
     </html>
   );
