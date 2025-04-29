@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import PlausibleAnalytics from "../components/PlausibleAnalytics";
+import PlausibleProvider from "next-plausible";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,23 +16,22 @@ const isDevelopment = process.env.NODE_ENV === "development";
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      {" "}
-      <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="theme-color" content="#1c1c1c" />
-        <link rel="icon" href="/favicon.ico" />
-        <script
-          defer
-          data-domain="web.denisbolba.com"
-          src="https://plausible.denisbolba.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
-        ></script>
-      </head>{" "}
-      <body className={`${inter.className} ${isDevelopment ? "dev-mode" : ""}`}>
-        {children}
-        {isDevelopment && <div className="responsive-indicator" />}
-        <PlausibleAnalytics />
-      </body>
-    </html>
+    <PlausibleProvider domain="plausible.denisbolba.com">
+      <html lang="en" className="scroll-smooth">
+        {" "}
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="theme-color" content="#1c1c1c" />
+          <link rel="icon" href="/favicon.ico" />
+        </head>{" "}
+        <body
+          className={`${inter.className} ${isDevelopment ? "dev-mode" : ""}`}
+        >
+          {children}
+          {isDevelopment && <div className="responsive-indicator" />}
+          <PlausibleAnalytics />
+        </body>
+      </html>
+    </PlausibleProvider>
   );
 }
