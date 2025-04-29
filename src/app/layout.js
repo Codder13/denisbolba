@@ -25,7 +25,7 @@ export default function RootLayout({ children }) {
         <script
           defer
           data-domain="web.denisbolba.com"
-          src="https://plausible-bo0og0skgc00oo8kwkg00occ.denisbolba.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+          src="https://plausible.denisbolba.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
         ></script>
       </head>{" "}
       <body className={`${inter.className} ${isDevelopment ? "dev-mode" : ""}`}>
