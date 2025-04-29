@@ -29,7 +29,6 @@ export default function RootLayout({ children }) {
         >
           {children}
           {isDevelopment && <div className="responsive-indicator" />}
-          <PlausibleAnalytics />
         </body>
       </html>
     </PlausibleProvider>
