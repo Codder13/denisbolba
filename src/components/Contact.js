@@ -2,6 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import {
   FaEnvelope,
   FaPhone,
@@ -46,12 +47,23 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      // Here you would normally send the form data to your backend
-      console.log("Form submitted:", formData);
+    try {
+      // Send email using EmailJS
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_email: "contact@denisbolba.com", // Your email
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
+      console.log("Email sent successfully:", result);
       setSubmitStatus("success");
-      setIsSubmitting(false);
       setFormData({
         name: "",
         email: "",
@@ -63,7 +75,17 @@ const Contact = () => {
       setTimeout(() => {
         setSubmitStatus(null);
       }, 5000);
-    }, 1500);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setSubmitStatus("error");
+
+      // Reset error status after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+      }, 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formVariants = {
@@ -451,6 +473,44 @@ const Contact = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   Send Another Message
+                </motion.button>
+              </motion.div>
+            ) : submitStatus === "error" ? (
+              <motion.div
+                className="h-full flex flex-col items-center justify-center text-center py-10"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3 }}
+              >
+                <div className="w-20 h-20 bg-red-500/20 rounded-full flex items-center justify-center mb-6">
+                  <svg
+                    className="w-10 h-10 text-red-500"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Oops! Something went wrong
+                </h3>
+                <p className="text-gray-300 mb-8 max-w-md">
+                  There was an issue sending your message. Please try again or
+                  contact me directly at contact@denisbolba.com
+                </p>
+                <motion.button
+                  onClick={() => setSubmitStatus(null)}
+                  className="inline-flex items-center text-sm bg-gradient-custom hover:opacity-90 text-white px-8 py-3 rounded-full font-medium shadow-lg hover:shadow-primary/30 transition-all duration-300"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Try Again
                 </motion.button>
               </motion.div>
             ) : (
