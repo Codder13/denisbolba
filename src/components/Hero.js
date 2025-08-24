@@ -252,7 +252,7 @@ const Hero = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 1.3 }}
                 >
-                  50+
+                  85+
                 </motion.div>
                 <div className="text-sm text-white/60">Projects Completed</div>
               </div>
@@ -274,7 +274,7 @@ const Hero = () => {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1, delay: 1.7 }}
                 >
-                  4+
+                  5+
                 </motion.div>
                 <div className="text-sm text-white/60">Years Experience</div>
               </div>
