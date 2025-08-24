@@ -7,70 +7,70 @@ import Image from "next/image";
 const projectsData = [
   {
     id: 1,
-    title: "E-commerce Website",
+    title: "Lavanda Florarie",
     category: "Web Design",
-    image: "/images/project-1.svg",
-    altText: "E-commerce website design mockup",
+    image: "/images/project-1.jpg",
+    altText: "Lavanda Florarie - Premium flower shop website",
     description:
-      "A fully responsive e-commerce website with modern design and seamless user experience.",
-    technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    link: "#",
+      "Elegant e-commerce website for a premium flower shop featuring beautiful product galleries and seamless ordering.",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "WordPress"],
+    link: "https://lavandaflorarie.com",
   },
   {
     id: 2,
-    title: "Portfolio Site",
+    title: "Bella Floraria",
     category: "UI/UX",
-    image: "/images/project-2.svg",
-    altText: "Portfolio website for a photographer",
+    image: "/images/project-2.jpg",
+    altText: "Bella Floraria - Modern florist e-commerce platform",
     description:
-      "Creative portfolio website for a photographer with stunning image galleries and smooth transitions.",
-    technologies: ["React", "GSAP", "Styled Components"],
-    link: "#",
+      "Modern e-commerce platform for a florist with stunning floral arrangements showcase and intuitive shopping experience.",
+    technologies: ["React", "GSAP", "Styled Components", "WordPress"],
+    link: "https://bellafloraria.ro",
   },
   {
     id: 3,
-    title: "Restaurant Booking App",
+    title: "Biciclete Copii",
     category: "Web App",
-    image: "/images/project-3.svg",
-    altText: "Restaurant booking application interface",
+    image: "/images/project-3.jpg",
+    altText: "Biciclete Copii - Children's bicycle store",
     description:
-      "Online booking system for restaurants with table reservation and menu management.",
-    technologies: ["Next.js", "Node.js", "MongoDB"],
-    link: "#",
+      "Specialized online store for children's bicycles with detailed product catalogs and safety information.",
+    technologies: ["Next.js", "Node.js", "MongoDB", "WordPress"],
+    link: "https://bicicletecopii.ro",
   },
-  {
-    id: 4,
-    title: "Travel Blog",
-    category: "WordPress",
-    image: "/images/project-1.svg",
-    altText: "Travel blog website design",
-    description:
-      "Custom WordPress theme for a travel blog with advanced filtering and category management.",
-    technologies: ["WordPress", "PHP", "JavaScript"],
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "Real Estate Platform",
-    category: "Web App",
-    image: "/images/project-2.svg",
-    altText: "Real estate property listing platform",
-    description:
-      "Property listing website with advanced search filters and interactive maps.",
-    technologies: ["React", "Redux", "Firebase"],
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "Fitness Tracker",
-    category: "Mobile App",
-    image: "/images/project-3.svg",
-    altText: "Fitness tracking mobile app interface",
-    description:
-      "Mobile app design for tracking workouts, nutrition, and progress with data visualization.",
-    technologies: ["Figma", "Adobe XD", "Sketch"],
-    link: "#",
-  },
+  // {
+  //   id: 4,
+  //   title: "Travel Blog",
+  //   category: "WordPress",
+  //   image: "/images/project-1.svg",
+  //   altText: "Travel blog website design",
+  //   description:
+  //     "Custom WordPress theme for a travel blog with advanced filtering and category management.",
+  //   technologies: ["WordPress", "PHP", "JavaScript"],
+  //   link: "#",
+  // },
+  // {
+  //   id: 5,
+  //   title: "Real Estate Platform",
+  //   category: "Web App",
+  //   image: "/images/project-2.svg",
+  //   altText: "Real estate property listing platform",
+  //   description:
+  //     "Property listing website with advanced search filters and interactive maps.",
+  //   technologies: ["React", "Redux", "Firebase"],
+  //   link: "#",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Fitness Tracker",
+  //   category: "Mobile App",
+  //   image: "/images/project-3.svg",
+  //   altText: "Fitness tracking mobile app interface",
+  //   description:
+  //     "Mobile app design for tracking workouts, nutrition, and progress with data visualization.",
+  //   technologies: ["Figma", "Adobe XD", "Sketch"],
+  //   link: "#",
+  // },
 ];
 
 const categories = [
@@ -344,7 +344,7 @@ const Projects = () => {
         </motion.div>
 
         {/* Enhanced View More Button */}
-        <motion.div
+        {/* <motion.div
           className="mt-16 text-center"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -378,7 +378,7 @@ const Projects = () => {
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </motion.a>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );
