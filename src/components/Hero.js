@@ -9,6 +9,8 @@ const Hero = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
 
+  const currentAge = new Date().getFullYear() - 2005;
+
   // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
@@ -152,7 +154,7 @@ const Hero = () => {
                 className="relative bg-gradient-to-r from-primary/10 to-primary/20 text-primary px-4 py-2 rounded-full text-sm font-medium backdrop-blur-md"
                 whileHover={{ scale: 1.05 }}
               >
-                <span className="relative z-10">Age: 19</span>
+                <span className="relative z-10">Age: {currentAge}</span>
                 <span className="absolute inset-0 rounded-full bg-primary/5 blur-sm"></span>
               </motion.span>
               <motion.span

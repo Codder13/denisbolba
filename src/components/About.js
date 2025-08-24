@@ -7,6 +7,8 @@ const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: false, amount: 0.3 });
 
+  const currentAge = new Date().getFullYear() - 2005;
+
   return (
     <section id="about" className="py-20 bg-dark relative overflow-hidden">
       {/* Enhanced decorative elements */}
@@ -122,11 +124,11 @@ const About = () => {
           >
             <div className="absolute inset-0 bg-gradient-to-br from-primary to-secondary rounded-2xl blur-xl opacity-30 group-hover:opacity-40 transition-opacity duration-300 transform group-hover:scale-105"></div>
             <div className="w-full h-[400px] md:h-[450px] bg-gradient-to-br from-gray-800/80 to-gray-900/80 backdrop-blur-md rounded-2xl overflow-hidden p-1.5 relative z-10 border border-white/10 shadow-xl">
-              {/* Replace with your actual image */}
-              <div className="w-full h-full bg-gray-800 rounded-xl flex items-center justify-center text-white text-xl relative overflow-hidden">
-                <span className="relative z-10">Your Image Here</span>
-                <div className="absolute inset-0 bg-grid-pattern opacity-20"></div>
-              </div>
+              <img
+                src="/images/profile.jpg"
+                alt="Denis Bolba"
+                className="w-full h-full object-cover rounded-xl relative z-10"
+              />
             </div>
 
             {/* Decorative elements */}
@@ -170,7 +172,7 @@ const About = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 viewport={{ once: true }}
               >
-                A passionate 19-year-old{" "}
+                A passionate {currentAge}-year-old{" "}
                 <span className="text-primary font-medium">entrepreneur</span>{" "}
                 and{" "}
                 <span className="text-secondary font-medium">web designer</span>{" "}
@@ -205,7 +207,7 @@ const About = () => {
               </div>
               <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
                 <h4 className="font-semibold text-primary mb-1">Age:</h4>
-                <p className="text-white">19 Years</p>
+                <p className="text-white">{currentAge} Years</p>
               </div>
               <div className="bg-white/5 backdrop-blur-sm p-4 rounded-xl border border-white/10">
                 <h4 className="font-semibold text-primary mb-1">From:</h4>
