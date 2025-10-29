@@ -1,0 +1,163 @@
+{
+	"header": {
+		"home": "Home",
+		"about": "About",
+		"skills": "Skills",
+		"projects": "Projects",
+		"contact": "Contact"
+	},
+	"hero": {
+		"availability": "Available for freelance work",
+		"greeting": "Hi, I'm",
+		"name": "Denis Bolba",
+		"role1": "Web Designer",
+		"role2": "Entrepreneur",
+		"age": "Age",
+		"location": "Oradea, Romania",
+		"description": "Creating stunning digital experiences with passion and precision. I transform innovative ideas into beautiful, functional websites that drive results and",
+		"descriptionHighlight": "captivate audiences",
+		"cta1": "Get in Touch",
+		"cta2": "View My Work",
+		"projectsCompleted": "Projects Completed",
+		"clientSatisfaction": "Client Satisfaction",
+		"yearsExperience": "Years Experience",
+		"scroll": "Scroll"
+	},
+	"about": {
+		"badge": "Get to know me",
+		"title": "About",
+		"titleHighlight": "Me",
+		"name": "Denis Bolba",
+		"description1": "A passionate {age}-year-old entrepreneur and web designer from Oradea, Romania. With a keen eye for design and a strong understanding of user experience, I create websites that not only look stunning but also deliver exceptional functionality.",
+		"entrepreneur": "entrepreneur",
+		"webDesigner": "web designer",
+		"description2": "My journey in web design began with a simple curiosity and has evolved into a professional career. I believe in creating digital experiences that leave a lasting impression and help businesses achieve their goals.",
+		"infoName": "Name:",
+		"infoAge": "Age:",
+		"infoAgeValue": "{age} Years",
+		"infoFrom": "From:",
+		"infoLocation": "Oradea, Romania",
+		"infoEmail": "Email:",
+		"infoEmailValue": "contact@denisbolba.com",
+		"cta": "Contact Me"
+	},
+	"skills": {
+		"badge": "My expertise",
+		"title": "Professional",
+		"titleHighlight": "Skills",
+		"description": "I've developed a wide range of skills throughout my journey as a web designer and entrepreneur. Here's a glimpse of my technical expertise.",
+		"skillsList": {
+			"webDesign": "Web Design",
+			"uiux": "UI/UX Design",
+			"html": "HTML/CSS",
+			"javascript": "JavaScript",
+			"react": "React.js",
+			"next": "Next.js",
+			"wordpress": "WordPress",
+			"figma": "Figma"
+		},
+		"services": {
+			"webDesign": {
+				"title": "Web Design",
+				"description": "Creating beautiful, functional and responsive websites that provide exceptional user experiences."
+			},
+			"uiux": {
+				"title": "UI/UX Design",
+				"description": "Designing intuitive interfaces and experiences that users love, focusing on accessibility and usability."
+			},
+			"development": {
+				"title": "Development",
+				"description": "Building modern web applications with the latest technologies to deliver exceptional digital solutions."
+			}
+		},
+		"stats": {
+			"yearsExperience": "Years Experience",
+			"projectsCompleted": "Projects Completed",
+			"happyClients": "Happy Clients",
+			"awardsReceived": "Awards Received"
+		}
+	},
+	"projects": {
+		"badge": "My work",
+		"title": "Recent",
+		"titleHighlight": "Projects",
+		"description": "Explore my latest web design and development projects. Each project represents my passion for creating beautiful, functional digital experiences.",
+		"categories": {
+			"all": "All",
+			"webDesign": "Web Design",
+			"uiux": "UI/UX",
+			"webApp": "Web App",
+			"wordpress": "WordPress",
+			"mobileApp": "Mobile App"
+		},
+		"projectsList": {
+			"lavanda": {
+				"title": "Lavanda Florarie",
+				"category": "Web Design",
+				"description": "Elegant e-commerce website for a premium flower shop featuring beautiful product galleries and seamless ordering."
+			},
+			"bella": {
+				"title": "Bella Floraria",
+				"category": "UI/UX",
+				"description": "Modern e-commerce platform for a florist with stunning floral arrangements showcase and intuitive shopping experience."
+			},
+			"biciclete": {
+				"title": "Biciclete Copii",
+				"category": "Web App",
+				"description": "Specialized online store for children's bicycles with detailed product catalogs and safety information."
+			}
+		},
+		"viewProject": "View Project"
+	},
+	"contact": {
+		"badge": "Let's talk",
+		"title": "Get in",
+		"titleHighlight": "Touch",
+		"description": "Let's work together to bring your vision to life. Feel free to reach out for collaborations, consultations, or just to say hello.",
+		"email": "Email",
+		"emailValue": "contact@denisbolba.com",
+		"emailCta": "Send an email",
+		"phone": "Phone",
+		"phoneValue": "+40 772 266 156",
+		"phoneCta": "Call me",
+		"location": "Location",
+		"locationValue": "Oradea, Romania",
+		"locationCta": "View on map",
+		"form": {
+			"nameLabel": "Your Name",
+			"emailLabel": "Your Email",
+			"subjectLabel": "Subject",
+			"messageLabel": "Your Message",
+			"submit": "Send Message",
+			"sending": "Sending...",
+			"successTitle": "Message Sent Successfully!",
+			"successMessage": "Thank you for reaching out. I'll get back to you as soon as possible. Looking forward to our conversation!",
+			"successCta": "Send Another Message",
+			"errorTitle": "Oops! Something went wrong",
+			"errorMessage": "There was an issue sending your message. Please try again or contact me directly at contact@denisbolba.com",
+			"errorCta": "Try Again",
+			"privacyNote": "Your information is secure and will never be shared with third parties."
+		}
+	},
+	"footer": {
+		"description": "Web designer and entrepreneur from Oradea, Romania. Creating stunning digital experiences with a focus on user-centered design and functionality.",
+		"navigation": "Navigation",
+		"services": "Services",
+		"newsletter": "Newsletter",
+		"newsletterDescription": "Subscribe to my newsletter to receive updates on my latest projects, insights, and exclusive offers.",
+		"newsletterPlaceholder": "Your email address",
+		"newsletterPrivacy": "I respect your privacy. No spam, ever.",
+		"servicesList": {
+			"webDesign": "Web Design",
+			"uiux": "UI/UX Design",
+			"webDevelopment": "Web Development",
+			"wordpress": "WordPress",
+			"consulting": "Consulting"
+		},
+		"copyright": "© {year} Denis Bolba. All rights reserved.",
+		"privacyPolicy": "Privacy Policy",
+		"termsOfService": "Terms of Service",
+		"cookies": "Cookies",
+		"scrollToTop": "Scroll to top"
+	}
+}

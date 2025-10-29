@@ -1,0 +1,163 @@
+{
+	"header": {
+		"home": "Acasă",
+		"about": "Despre",
+		"skills": "Competențe",
+		"projects": "Proiecte",
+		"contact": "Contact"
+	},
+	"hero": {
+		"availability": "Disponibil pentru proiecte freelance",
+		"greeting": "Salut, sunt",
+		"name": "Denis Bolba",
+		"role1": "Web Designer",
+		"role2": "Antreprenor",
+		"age": "Vârstă",
+		"location": "Oradea, România",
+		"description": "Creez experiențe digitale uimitoare cu pasiune și precizie. Transform idei inovatoare în site-uri web frumoase și funcționale care oferă rezultate și",
+		"descriptionHighlight": "captivează publicul",
+		"cta1": "Contactează-mă",
+		"cta2": "Vezi Proiectele",
+		"projectsCompleted": "Proiecte Finalizate",
+		"clientSatisfaction": "Satisfacția Clienților",
+		"yearsExperience": "Ani de Experiență",
+		"scroll": "Derulează"
+	},
+	"about": {
+		"badge": "Cunoaște-mă",
+		"title": "Despre",
+		"titleHighlight": "Mine",
+		"name": "Denis Bolba",
+		"description1": "Un antreprenor și web designer pasionat de {age} de ani din Oradea, România. Cu un ochi format pentru design și o înțelegere puternică a experienței utilizatorului, creez site-uri web care nu doar arată uimitor, ci oferă și funcționalitate excepțională.",
+		"entrepreneur": "antreprenor",
+		"webDesigner": "web designer",
+		"description2": "Călătoria mea în designul web a început cu o simplă curiozitate și a evoluat într-o carieră profesională. Cred în crearea de experiențe digitale care lasă o impresie de durată și ajută afacerile să își atingă obiectivele.",
+		"infoName": "Nume:",
+		"infoAge": "Vârstă:",
+		"infoAgeValue": "{age} Ani",
+		"infoFrom": "Din:",
+		"infoLocation": "Oradea, România",
+		"infoEmail": "Email:",
+		"infoEmailValue": "contact@denisbolba.com",
+		"cta": "Contactează-mă"
+	},
+	"skills": {
+		"badge": "Expertiza mea",
+		"title": "Competențe",
+		"titleHighlight": "Profesionale",
+		"description": "Am dezvoltat o gamă largă de competențe pe parcursul călătoriei mele ca web designer și antreprenor. Iată o privire asupra expertizei mele tehnice.",
+		"skillsList": {
+			"webDesign": "Design Web",
+			"uiux": "Design UI/UX",
+			"html": "HTML/CSS",
+			"javascript": "JavaScript",
+			"react": "React.js",
+			"next": "Next.js",
+			"wordpress": "WordPress",
+			"figma": "Figma"
+		},
+		"services": {
+			"webDesign": {
+				"title": "Design Web",
+				"description": "Creez site-uri web frumoase, funcționale și responsive care oferă experiențe excepționale utilizatorilor."
+			},
+			"uiux": {
+				"title": "Design UI/UX",
+				"description": "Proiectez interfețe și experiențe intuitive pe care utilizatorii le adoră, concentrându-mă pe accesibilitate și utilizabilitate."
+			},
+			"development": {
+				"title": "Dezvoltare",
+				"description": "Construiesc aplicații web moderne cu cele mai recente tehnologii pentru a oferi soluții digitale excepționale."
+			}
+		},
+		"stats": {
+			"yearsExperience": "Ani de Experiență",
+			"projectsCompleted": "Proiecte Finalizate",
+			"happyClients": "Clienți Mulțumiți",
+			"awardsReceived": "Premii Primite"
+		}
+	},
+	"projects": {
+		"badge": "Lucrul meu",
+		"title": "Proiecte",
+		"titleHighlight": "Recente",
+		"description": "Explorează cele mai recente proiecte de design și dezvoltare web. Fiecare proiect reprezintă pasiunea mea pentru crearea de experiențe digitale frumoase și funcționale.",
+		"categories": {
+			"all": "Toate",
+			"webDesign": "Design Web",
+			"uiux": "UI/UX",
+			"webApp": "Aplicație Web",
+			"wordpress": "WordPress",
+			"mobileApp": "Aplicație Mobilă"
+		},
+		"projectsList": {
+			"lavanda": {
+				"title": "Lavanda Florarie",
+				"category": "Design Web",
+				"description": "Site e-commerce elegant pentru o florărie premium cu galerii frumoase de produse și comandă simplă."
+			},
+			"bella": {
+				"title": "Bella Floraria",
+				"category": "UI/UX",
+				"description": "Platformă e-commerce modernă pentru o florărie cu prezentarea spectaculoasă a aranjamentelor florale și experiență de cumpărare intuitivă."
+			},
+			"biciclete": {
+				"title": "Biciclete Copii",
+				"category": "Aplicație Web",
+				"description": "Magazin online specializat pentru biciclete pentru copii cu cataloage detaliate de produse și informații de siguranță."
+			}
+		},
+		"viewProject": "Vezi Proiectul"
+	},
+	"contact": {
+		"badge": "Hai să vorbim",
+		"title": "Intră în",
+		"titleHighlight": "Legătură",
+		"description": "Să lucrăm împreună pentru a da viață viziunii tale. Nu ezita să mă contactezi pentru colaborări, consultații sau doar pentru a spune salut.",
+		"email": "Email",
+		"emailValue": "contact@denisbolba.com",
+		"emailCta": "Trimite un email",
+		"phone": "Telefon",
+		"phoneValue": "+40 772 266 156",
+		"phoneCta": "Sună-mă",
+		"location": "Locație",
+		"locationValue": "Oradea, România",
+		"locationCta": "Vezi pe hartă",
+		"form": {
+			"nameLabel": "Numele Tău",
+			"emailLabel": "Email-ul Tău",
+			"subjectLabel": "Subiect",
+			"messageLabel": "Mesajul Tău",
+			"submit": "Trimite Mesaj",
+			"sending": "Se trimite...",
+			"successTitle": "Mesaj Trimis cu Succes!",
+			"successMessage": "Mulțumesc că m-ai contactat. Îți voi răspunde cât mai curând posibil. Aștept cu nerăbdare conversația noastră!",
+			"successCta": "Trimite Alt Mesaj",
+			"errorTitle": "Hopa! Ceva nu a mers bine",
+			"errorMessage": "A apărut o problemă la trimiterea mesajului. Te rog încearcă din nou sau contactează-mă direct la contact@denisbolba.com",
+			"errorCta": "Încearcă Din Nou",
+			"privacyNote": "Informațiile tale sunt sigure și nu vor fi niciodată partajate cu terțe părți."
+		}
+	},
+	"footer": {
+		"description": "Web designer și antreprenor din Oradea, România. Creez experiențe digitale uimitoare cu focus pe design centrat pe utilizator și funcționalitate.",
+		"navigation": "Navigare",
+		"services": "Servicii",
+		"newsletter": "Newsletter",
+		"newsletterDescription": "Abonează-te la newsletter-ul meu pentru a primi actualizări despre cele mai recente proiecte, perspective și oferte exclusive.",
+		"newsletterPlaceholder": "Adresa ta de email",
+		"newsletterPrivacy": "Respect confidențialitatea ta. Fără spam, niciodată.",
+		"servicesList": {
+			"webDesign": "Design Web",
+			"uiux": "Design UI/UX",
+			"webDevelopment": "Dezvoltare Web",
+			"wordpress": "WordPress",
+			"consulting": "Consultanță"
+		},
+		"copyright": "© {year} Denis Bolba. Toate drepturile rezervate.",
+		"privacyPolicy": "Politica de Confidențialitate",
+		"termsOfService": "Termeni și Condiții",
+		"cookies": "Cookie-uri",
+		"scrollToTop": "Derulează sus"
+	}
+}
