@@ -1,1 +1,49 @@
-{}
+{
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[graphql]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "typescript.experimental.useTsgo": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "emmet.showExpandedAbbreviation": "never",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.biome": "explicit",
+    "source.organizeImports.biome": "explicit"
+  },
+  "chat.mcp.serverSampling": {
+    "alex-test/.vscode/mcp.json: Sentry": {
+      "allowedModels": [
+        "copilot/gpt-4.1",
+        "copilot/auto",
+        "copilot/claude-3.5-sonnet",
+        "copilot/claude-3.7-sonnet",
+        "copilot/claude-3.7-sonnet-thought",
+        "copilot/claude-sonnet-4",
+        "copilot/gemini-2.0-flash-001",
+        "copilot/gemini-2.5-pro",
+        "copilot/gpt-4o",
+        "copilot/gpt-5",
+        "copilot/gpt-5-mini",
+        "copilot/o3-mini",
+        "copilot/o4-mini"
+      ]
+    }
+  }
+}
