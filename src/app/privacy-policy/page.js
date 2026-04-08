@@ -180,7 +180,7 @@ export default function PrivacyPolicyPage() {
 								For privacy questions or requests, contact us at:
 								<span className="text-white font-medium">
 									{" "}
-									contact@yourdomain.com
+									contact@denisbolba.com
 								</span>
 							</p>
 						</section>

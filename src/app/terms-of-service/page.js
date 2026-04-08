@@ -182,7 +182,7 @@ export default function TermsOfServicePage() {
 								For legal questions regarding these Terms, contact:
 								<span className="text-white font-medium">
 									{" "}
-									legal@yourdomain.com
+									contact@denisbolba.com
 								</span>
 							</p>
 						</section>
