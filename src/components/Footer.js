@@ -328,19 +328,19 @@ const Footer = () => {
 						transition={{ duration: 0.5, delay: 0.4 }}
 					>
 						<a
-							href="#"
+							href="/privacy-policy"
 							className="text-gray-400 hover:text-primary text-sm transition-colors"
 						>
 							{t("footer.privacyPolicy")}
 						</a>
 						<a
-							href="#"
+							href="/terms-of-service"
 							className="text-gray-400 hover:text-primary text-sm transition-colors"
 						>
 							{t("footer.termsOfService")}
 						</a>
 						<a
-							href="#"
+							href="/privacy-policy#cookies-and-tracking"
 							className="text-gray-400 hover:text-primary text-sm transition-colors"
 						>
 							{t("footer.cookies")}
