@@ -18,13 +18,13 @@ const useProjectsData = (t) => [
 	},
 	{
 		id: 2,
-		title: t("projects.projectsList.bella.title"),
-		category: t("projects.projectsList.bella.category"),
-		image: "/images/project-2.jpg",
-		altText: "Bella Floraria - Modern florist e-commerce platform",
-		description: t("projects.projectsList.bella.description"),
-		technologies: ["React", "GSAP", "Styled Components", "WordPress"],
-		link: "https://bellafloraria.ro",
+		title: t("projects.projectsList.douaroti.title"),
+		category: t("projects.projectsList.douaroti.category"),
+		image: "/images/project-2.png",
+		altText: "Două Roți - Modern bicycle e-commerce platform",
+		description: t("projects.projectsList.douaroti.description"),
+		technologies: ["WordPress", "WooCommerce", "Tailwind CSS", "JavaScript"],
+		link: "https://douaroti.ro",
 	},
 	{
 		id: 3,
@@ -212,7 +212,12 @@ const Projects = () => {
 							onHoverStart={() => setHoveredItem(project.id)}
 							onHoverEnd={() => setHoveredItem(null)}
 						>
-							<div className="h-full flex flex-col rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm border border-white/10 shadow-xl transition-all duration-300 group-hover:border-primary/30 group-hover:shadow-primary/5">
+							<a
+								href={project.link}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="h-full flex flex-col rounded-2xl overflow-hidden bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-sm border border-white/10 shadow-xl transition-all duration-300 group-hover:border-primary/30 group-hover:shadow-primary/5 cursor-pointer"
+							>
 								{/* Project Image with enhanced hover effect */}
 								<div className="relative overflow-hidden h-56">
 									{/* Gradient overlay */}
@@ -282,8 +287,7 @@ const Projects = () => {
 										))}
 									</div>
 
-									<motion.a
-										href={project.link}
+									<motion.span
 										className="inline-flex items-center text-sm font-medium bg-gradient-custom text-transparent bg-clip-text group/link relative self-start"
 										whileHover={{ x: 5 }}
 										transition={{ duration: 0.2 }}
@@ -304,12 +308,12 @@ const Projects = () => {
 											></path>
 										</svg>
 										<span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-custom group-hover/link:w-full transition-all duration-300"></span>
-									</motion.a>
+									</motion.span>
 								</div>
 
 								{/* Hover effect corner */}
 								<div className="absolute -bottom-2 -right-2 w-8 h-8 bg-gradient-to-tr from-primary to-secondary rounded-md blur-md opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
-							</div>
+							</a>
 						</motion.div>
 					))}
 				</motion.div>
