@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-import { useLanguage } from "@/contexts/LanguageContext";
+import LegalPage from "@/components/LegalPage";
 
 const TERMS_CONTENT = {
 	en: {
@@ -217,74 +216,5 @@ const TERMS_CONTENT = {
 };
 
 export default function TermsOfServicePage() {
-	const { language, toggleLanguage } = useLanguage();
-	const updatedOn = "April 8, 2026";
-	const content = language === "ro" ? TERMS_CONTENT.ro : TERMS_CONTENT.en;
-
-	return (
-		<main className="min-h-screen bg-dark text-white py-16 md:py-24">
-			<div className="container mx-auto px-4 max-w-4xl">
-				<div className="mb-8 flex items-center justify-between gap-4">
-					<Link
-						href="/"
-						className="inline-flex items-center text-sm text-gray-300 hover:text-primary transition-colors"
-					>
-						{content.backToHome}
-					</Link>
-					<button
-						type="button"
-						onClick={toggleLanguage}
-						className="text-white hover:text-primary transition-colors font-medium text-sm border border-white/20 rounded-md px-3 py-1.5 hover:border-primary/50"
-						aria-label={content.toggleLabel}
-					>
-						{content.toggleText}
-					</button>
-				</div>
-
-				<div className="bg-white/5 border border-white/10 rounded-2xl p-6 md:p-10 backdrop-blur-sm">
-					<p className="text-primary text-sm uppercase tracking-[0.2em] mb-3">
-						{content.legal}
-					</p>
-					<h1 className="text-3xl md:text-5xl font-bold mb-4">
-						{content.title}
-					</h1>
-					<p className="text-gray-300 mb-8">
-						{content.lastUpdatedLabel}: {updatedOn}
-					</p>
-
-					<div className="space-y-8 text-gray-200 leading-relaxed">
-						{content.sections.map((section) => (
-							<section key={section.key}>
-								<h2 className="text-xl font-semibold text-white mb-2">
-									{section.title}
-								</h2>
-								{section.paragraphs?.map((paragraph) => (
-									<p key={paragraph} className="mb-2 last:mb-0">
-										{paragraph}
-									</p>
-								))}
-								{section.intro ? <p className="mb-2">{section.intro}</p> : null}
-								{section.list ? (
-									<ul className="list-disc pl-6 space-y-2 text-gray-300">
-										{section.list.map((item) => (
-											<li key={item}>{item}</li>
-										))}
-									</ul>
-								) : null}
-								{section.key === "contact" ? (
-									<p>
-										{content.contactLead}
-										<span className="text-white font-medium">
-											{" "}
-											contact@denisbolba.com
-										</span>
-									</p>
-								) : null}
-							</section>
-						))}
-					</div>
-				</div>
-			</div>
-		</main>
-	);
+	return <LegalPage content={TERMS_CONTENT} updatedOn="April 8, 2026" />;
 }

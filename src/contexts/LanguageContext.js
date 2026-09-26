@@ -1,10 +1,11 @@
 "use client";
 
-import React, { createContext, useState, useContext, useEffect } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import en from "../locales/en.json";
 import ro from "../locales/ro.json";
 
-const LanguageContext = createContext();
+const dictionaries = { en, ro };
+const LanguageContext = createContext(null);
 
 export const useLanguage = () => {
 	const context = useContext(LanguageContext);
@@ -15,64 +16,45 @@ export const useLanguage = () => {
 };
 
 export const LanguageProvider = ({ children }) => {
-	const [language, setLanguage] = useState("en");
-	const [isLoaded, setIsLoaded] = useState(false);
-	const [isTransitioning, setIsTransitioning] = useState(false);
+	const [language, setLanguageState] = useState("en");
 
 	useEffect(() => {
-		// Load language preference from localStorage
-		const savedLanguage = localStorage.getItem("language");
-		if (savedLanguage && (savedLanguage === "en" || savedLanguage === "ro")) {
-			setLanguage(savedLanguage);
-		}
-		setIsLoaded(true);
+		const saved = localStorage.getItem("language");
+		if (saved === "en" || saved === "ro") setLanguageState(saved);
 	}, []);
 
-	const toggleLanguage = () => {
-		setIsTransitioning(true);
-		const newLanguage = language === "en" ? "ro" : "en";
+	useEffect(() => {
+		document.documentElement.lang = language;
+	}, [language]);
 
-		// Small delay to allow fade-out animation
-		setTimeout(() => {
-			setLanguage(newLanguage);
-			localStorage.setItem("language", newLanguage);
+	const setLanguage = useCallback((next) => {
+		setLanguageState(next);
+		localStorage.setItem("language", next);
+	}, []);
 
-			// Reset transitioning state after language change
-			setTimeout(() => {
-				setIsTransitioning(false);
-			}, 50);
-		}, 150);
-	};
+	const toggleLanguage = useCallback(() => {
+		setLanguage(language === "en" ? "ro" : "en");
+	}, [language, setLanguage]);
 
-	const translations = language === "en" ? en : ro;
-
-	const t = (key, params = {}) => {
-		const keys = key.split(".");
-		let value = translations;
-
-		for (const k of keys) {
-			if (value && typeof value === "object" && k in value) {
-				value = value[k];
-			} else {
-				return key; // Return key if translation not found
+	const t = useCallback(
+		(key, params = {}) => {
+			let value = dictionaries[language];
+			for (const k of key.split(".")) {
+				if (value && typeof value === "object" && k in value) value = value[k];
+				else return key;
 			}
-		}
-
-		// Replace parameters in the string
-		if (typeof value === "string" && Object.keys(params).length > 0) {
-			return value.replace(/\{(\w+)\}/g, (match, key) => {
-				return params[key] !== undefined ? params[key] : match;
-			});
-		}
-
-		return value;
-	};
-
-	return (
-		<LanguageContext.Provider
-			value={{ language, toggleLanguage, t, isLoaded, isTransitioning }}
-		>
-			{children}
-		</LanguageContext.Provider>
+			if (typeof value === "string") {
+				return value.replace(/\{(\w+)\}/g, (m, p) => (params[p] !== undefined ? params[p] : m));
+			}
+			return value;
+		},
+		[language],
 	);
+
+	const value = useMemo(
+		() => ({ language, setLanguage, toggleLanguage, t }),
+		[language, setLanguage, toggleLanguage, t],
+	);
+
+	return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
 };
