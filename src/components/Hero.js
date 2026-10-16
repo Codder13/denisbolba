@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowUpRight } from "./Icons";
 import { EMAIL, getAge } from "./site";
 
 function LocalTime() {
@@ -27,72 +27,49 @@ export default function Hero() {
 
 	return (
 		<section id="top" className="hero">
-			<div className="wrap">
-				<div className="hero-grid">
-					<div className="hero-copy">
-						<p className="status reveal">
-							<span className="dot" aria-hidden="true" />
-							{t("hero.status")}
-							<span className="sep" aria-hidden="true" />
-							<LocalTime />
-							<span>{t("hero.localTime")}</span>
-						</p>
-						<h1 className="display reveal" style={{ "--d": "80ms" }}>
-							{t("hero.headlineA")} <span className="serif">{t("hero.headlineEm")}</span>
-						</h1>
-						<p className="hero-intro reveal" style={{ "--d": "160ms" }}>
-							{t("hero.intro", { age })}
-						</p>
-						<div className="hero-cta reveal" style={{ "--d": "240ms" }}>
+			<div className="wrap hero-grid">
+				<div className="hero-copy">
+					<div className="hero-dateline">
+						<span>{t("hero.status")}</span>
+						<span className="hero-clock">
+							<LocalTime /> {t("hero.localTime")}
+						</span>
+					</div>
+
+					<div className="hero-main">
+						<h1 className="hero-title">{t("hero.headline")}</h1>
+						<p className="hero-intro">{t("hero.intro", { age })}</p>
+						<div className="hero-actions">
 							<a href="#contact" className="btn btn-primary">
 								{t("hero.ctaPrimary")}
-								<ArrowUpRight />
 							</a>
-							<a href="#work" className="btn btn-ghost">
+							<a href="#work" className="btn btn-secondary">
 								{t("hero.ctaSecondary")}
+							</a>
+							<a href={`mailto:${EMAIL}`} className="hero-mail text-link">
+								{EMAIL}
 							</a>
 						</div>
 					</div>
+				</div>
 
-					<div className="hero-media reveal" style={{ "--d": "120ms" }}>
-						<figure className="portrait" style={{ margin: 0 }}>
-							<img
+				<div className="hero-portrait-col">
+					<figure className="portrait-figure">
+						<div className="portrait-frame">
+							<Image
 								src="/images/opt/profile.webp"
 								alt={t("hero.portraitAlt")}
 								width={1200}
 								height={1600}
-								fetchPriority="high"
+								priority
 							/>
-							<figcaption>
-								<span>{t("hero.caption")}</span>
-								<span>47.05°N 21.92°E</span>
-							</figcaption>
-						</figure>
-					</div>
+						</div>
+						<figcaption className="portrait-caption">
+							<strong>{t("hero.captionName")}</strong>
+							<span>{t("hero.captionRole")}</span>
+						</figcaption>
+					</figure>
 				</div>
-
-				<dl className="hero-meta reveal" style={{ "--d": "320ms" }}>
-					<div>
-						<dt>{t("hero.metaRoleLabel")}</dt>
-						<dd>{t("hero.metaRole")}</dd>
-					</div>
-					<div>
-						<dt>{t("hero.metaBasedLabel")}</dt>
-						<dd>{t("hero.metaBased")}</dd>
-					</div>
-					<div>
-						<dt>{t("hero.metaFocusLabel")}</dt>
-						<dd>{t("hero.metaFocus")}</dd>
-					</div>
-					<div>
-						<dt>{t("hero.metaContactLabel")}</dt>
-						<dd>
-							<a href={`mailto:${EMAIL}`} className="ulink">
-								{EMAIL}
-							</a>
-						</dd>
-					</div>
-				</dl>
 			</div>
 		</section>
 	);

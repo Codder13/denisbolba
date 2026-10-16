@@ -7,117 +7,128 @@
 		"services": "Servicii",
 		"about": "Despre",
 		"contact": "Contact",
-		"cta": "Hai să vorbim",
+		"cta": "Începe un proiect",
 		"menu": "Meniu",
 		"close": "Închide",
-		"switchTo": "Switch to English"
+		"switchTo": "Limbă"
 	},
 	"hero": {
-		"status": "Disponibil pentru proiecte freelance",
-		"localTime": "în Oradea",
-		"headlineA": "Design și dezvoltare web pentru branduri care vor să fie",
-		"headlineEm": "luate în serios.",
-		"intro": "Sunt Denis, web designer și antreprenor de {age} de ani din Oradea. Transform idei în site-uri rapide și șlefuite, pentru afaceri cărora le pasă de detalii.",
+		"status": "Disponibil pentru proiecte noi",
+		"localTime": "ora locală în Oradea",
+		"headline": "Site-uri și magazine online construite să inspire încredere și să vândă.",
+		"intro": "Sunt Denis Bolba, web designer și antreprenor de {age} de ani din Oradea. Proiectez și dezvolt site-uri comerciale rapide și clare pentru afaceri cărora le pasă cum se prezintă online.",
 		"ctaPrimary": "Începe un proiect",
-		"ctaSecondary": "Vezi proiectele",
-		"portraitAlt": "Portret Denis Bolba, seara",
-		"caption": "Oradea, RO",
-		"metaRoleLabel": "Rol",
-		"metaRole": "Web designer & antreprenor",
-		"metaBasedLabel": "Locație",
-		"metaBased": "Oradea, România",
-		"metaFocusLabel": "Focus",
-		"metaFocus": "Web design, UI/UX, Next.js, WordPress",
-		"metaContactLabel": "Scrie-mi",
-		"metaContact": "contact@denisbolba.com"
+		"ctaSecondary": "Vezi proiectele live",
+		"portraitAlt": "Portret Denis Bolba în Oradea",
+		"captionName": "Denis Bolba",
+		"captionRole": "Web designer & antreprenor, Oradea"
 	},
 	"work": {
 		"label": "Proiecte selectate",
-		"title": "Afaceri reale, lansate și online.",
-		"intro": "Câteva proiecte recente: magazine online și site-uri de brand, construite să arate impecabil și să vândă.",
-		"visit": "Vezi site-ul",
+		"title": "Afaceri reale, proiectate, lansate și active online.",
+		"intro": "Magazine online și site-uri de prezentare gândite pentru clienți reali. Alege un proiect pentru a vedea detaliile sau deschide direct site-ul live.",
+		"visit": "Deschide site-ul",
+		"deliverablesLabel": "Livrabile",
+		"stackLabel": "Tehnologii",
+		"domainLabel": "Domeniu live",
+		"allProjectsLabel": "Toate proiectele publicate",
 		"projects": {
 			"lavanda": {
 				"title": "Lavanda Florărie",
-				"category": "E-commerce · Web design",
-				"description": "Magazin online elegant pentru o florărie premium, cu galerii bogate de produse și un flux de comandă fără fricțiune."
+				"category": "Florărie online",
+				"year": "2024",
+				"description": "Magazin online pentru o florărie premium, construit în jurul fotografiilor de produs, filtrării rapide a buchetelor și unui flux simplu de comandă.",
+				"deliverables": "Design magazin, catalog produse, flux de comandă",
+				"stack": ["Next.js", "Tailwind CSS", "WordPress"]
 			},
 			"douaroti": {
 				"title": "Două Roți",
-				"category": "E-commerce · WordPress",
-				"description": "Magazin modern și localizator de service pentru un retailer de biciclete, cu un catalog amplu și integrări personalizate."
+				"category": "Magazin și service de biciclete",
+				"year": "2024",
+				"description": "Platformă e-commerce completă și localizator de service pentru un retailer de biciclete și e-bikes, cu un catalog tehnic extins și filtre dedicate.",
+				"deliverables": "Arhitectură e-commerce, structură catalog, programări service",
+				"stack": ["WordPress", "WooCommerce", "Tailwind CSS", "JavaScript"]
 			},
 			"biciclete": {
 				"title": "Biciclete Copii",
-				"category": "E-commerce · Aplicație web",
-				"description": "Magazin specializat în biciclete pentru copii, cu cataloage detaliate și informații clare de siguranță pentru părinți."
+				"category": "Magazin de biciclete pentru copii",
+				"year": "2024",
+				"description": "Magazin online dedicat bicicletelor pentru copii, organizat astfel încât părinții să aleagă ușor mărimea cadrului și echipamentul potrivit.",
+				"deliverables": "Interfață magazin, ghid de mărimi pe vârstă, catalog produse",
+				"stack": ["Next.js", "React", "WordPress"]
 			}
 		}
 	},
 	"services": {
 		"label": "Servicii",
-		"title": "Cu ce te pot ajuta.",
+		"title": "Ce proiectez și construiesc.",
+		"intro": "Mă ocup de fiecare proiect cap-coadă, de la primele schițe în Figma până la lansarea pe domeniu și configurarea magazinului.",
+		"toolsLabel": "Tehnologii și unelte",
 		"items": {
 			"design": {
 				"title": "Web design",
-				"description": "Site-uri distincte, responsive, cu o ierarhie clară. Construite în jurul brandului tău, nu al unui template."
+				"scope": "Site-uri de brand, pagini de vânzare, layout-uri originale",
+				"description": "Site-uri distincte, responsive, cu o ierarhie vizuală clară, construite în jurul produselor și clienților tăi, nu după un șablon generic."
 			},
 			"uiux": {
-				"title": "UI / UX",
-				"description": "Interfețe intuitive, accesibile și plăcute la folosit, de la wireframe-uri la prototipuri Figma finisate."
+				"title": "Design de interfață & UX",
+				"scope": "Wireframe-uri, prototipuri Figma, sisteme vizuale",
+				"description": "Navigare intuitivă, tipografie lizibilă și pași simpli de cumpărare care fac imediat clar ce oferă afacerea ta."
 			},
 			"development": {
-				"title": "Dezvoltare",
-				"description": "Implementări rapide și moderne cu React și Next.js, optimizate SEO și ușor de întreținut."
+				"title": "Dezvoltare frontend",
+				"scope": "React, Next.js, site-uri rapide și optimizate",
+				"description": "Cod curat și ușor de întreținut, care se încarcă rapid pe mobil, este bine indexat de motoarele de căutare și rămâne stabil în timp."
 			},
 			"wordpress": {
-				"title": "WordPress & e‑commerce",
-				"description": "Magazine WooCommerce și site-uri WordPress pe care le poți administra singur, gândite să convertească."
+				"title": "WordPress & e-commerce",
+				"scope": "Magazine WooCommerce, cataloage, administrare simplă",
+				"description": "Magazine online și site-uri pe care le poți actualiza și gestiona singur zi de zi, fără să depinzi de un programator pentru fiecare modificare."
 			}
-		},
-		"toolsLabel": "Unelte"
+		}
 	},
 	"about": {
 		"label": "Despre",
-		"title": "Curios din fire, obsedat de detalii.",
-		"p1": "Am ajuns la web design din simplă curiozitate și am transformat-o într-o meserie. Astăzi îmi conduc propriile proiecte ca antreprenor și creez site-uri pentru afaceri din toată România.",
-		"p2": "Îmi pasă de lucrurile pe care oamenii le simt, dar rar le observă: cât de repede se încarcă o pagină, cum stă tipografia, cum răspunde un buton. Vreau ca site-urile pe care le construiesc să lase o impresie durabilă și să își facă treaba.",
+		"title": "Curios din fire, atent la fiecare detaliu.",
+		"p1": "Am început să construiesc site-uri din simplă curiozitate și am transformat această pasiune într-o profesie. Pe lângă proiectele pentru clienți, dezvolt propriile proiecte e-commerce din Oradea, ceea ce mă ajută să privesc fiecare site prin ochii unui antreprenor.",
+		"p2": "Pun accent pe lucrurile pe care vizitatorii le simt imediat: cât de repede răspunde o pagină, cât de plăcut se citește textul și cât de firesc este drumul de la prima vizită până la comandă.",
 		"factName": "Nume",
 		"factAge": "Vârstă",
 		"factAgeValue": "{age} de ani",
-		"factFrom": "Din",
+		"factFrom": "Locație",
 		"factFromValue": "Oradea, România",
-		"factEmail": "Email"
+		"factFocus": "Specializare",
+		"factFocusValue": "Web design, Next.js, WooCommerce",
+		"factEmail": "Email direct"
 	},
 	"contact": {
 		"label": "Contact",
-		"titleA": "Ai un proiect în minte?",
-		"titleEm": "Hai să vorbim.",
-		"description": "Colaborări, consultanță sau doar un salut. De obicei răspund în una-două zile.",
-		"copy": "Copiază",
-		"copied": "Copiat",
+		"title": "Ai un proiect în plan? Hai să discutăm.",
+		"description": "Spune-mi pe scurt ce vrei să construiești sau ce are nevoie de un redesign. Citesc personal fiecare mesaj și răspund de obicei în cel mult o zi lucrătoare.",
+		"copy": "Copiază adresa",
+		"copied": "Adresă copiată",
 		"phone": "Telefon",
 		"location": "Locație",
 		"locationValue": "Oradea, România",
-		"elsewhere": "Online",
+		"elsewhere": "Profiluri",
 		"form": {
-			"name": "Nume",
-			"email": "Email",
-			"subject": "Subiect",
-			"message": "Povestește-mi despre proiect",
+			"name": "Numele tău",
+			"email": "Adresă de email",
+			"subject": "Proiectul sau subiectul",
+			"message": "Ce îți propui să construiești?",
 			"submit": "Trimite mesajul",
 			"sending": "Se trimite…",
-			"successTitle": "Mesaj trimis.",
-			"successMessage": "Mulțumesc că mi-ai scris. Revin cu un răspuns cât de curând.",
-			"successCta": "Trimite altul",
-			"errorMessage": "Ceva n-a mers. Încearcă din nou sau scrie-mi direct la contact@denisbolba.com.",
-			"privacy": "Datele tale sunt folosite doar ca să îți răspund."
+			"successTitle": "Mesajul a ajuns.",
+			"successMessage": "Mulțumesc că mi-ai scris. Voi citi detaliile și îți voi răspunde în curând.",
+			"successCta": "Trimite încă un mesaj",
+			"errorMessage": "Mesajul nu a putut fi trimis momentan. Încearcă din nou sau scrie-mi direct la contact@denisbolba.com.",
+			"privacy": "Datele tale sunt folosite exclusiv pentru a-ți răspunde la mesaj."
 		}
 	},
 	"footer": {
-		"rights": "© {year} Denis Bolba",
-		"privacy": "Confidențialitate",
-		"terms": "Termeni",
+		"rights": "© {year} Denis Bolba. Construit în Oradea, România.",
+		"privacy": "Politica de confidențialitate",
+		"terms": "Termeni și condiții",
 		"cookies": "Cookie-uri",
 		"top": "Înapoi sus"
 	}

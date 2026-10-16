@@ -3,7 +3,7 @@
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowUpRight, Check } from "./Icons";
+import { Check } from "./Icons";
 import { EMAIL, PHONE, PHONE_HREF, SOCIALS } from "./site";
 
 const EMPTY = { name: "", email: "", subject: "", message: "" };
@@ -11,16 +11,17 @@ const EMPTY = { name: "", email: "", subject: "", message: "" };
 export default function Contact() {
 	const { t } = useLanguage();
 	const [form, setForm] = useState(EMPTY);
-	const [status, setStatus] = useState("idle"); // idle | sending | success | error
+	const [status, setStatus] = useState("idle");
 	const [copied, setCopied] = useState(false);
 
-	const onChange = (e) => setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
+	const onChange = (e) =>
+		setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
 	const copyEmail = async () => {
 		try {
 			await navigator.clipboard.writeText(EMAIL);
 			setCopied(true);
-			setTimeout(() => setCopied(false), 1800);
+			setTimeout(() => setCopied(false), 2000);
 		} catch {
 			window.location.href = `mailto:${EMAIL}`;
 		}
@@ -50,30 +51,29 @@ export default function Contact() {
 		}
 	};
 
-	const [titleA, titleEm] = [t("contact.titleA"), t("contact.titleEm")];
-
 	return (
-		<section id="contact" className="section contact">
+		<section id="contact" className="section contact-section">
 			<div className="wrap contact-grid">
-				<div className="contact-left">
-					<span className="eyebrow reveal">
-						<span className="idx">04</span> {t("contact.label")}
-					</span>
-					<h2 className="display reveal">
-						{titleA} <span className="serif">{titleEm}</span>
-					</h2>
-					<p className="reveal" style={{ "--d": "80ms" }}>
-						{t("contact.description")}
-					</p>
-					<div className="mail reveal" style={{ "--d": "140ms" }}>
-						<a href={`mailto:${EMAIL}`} className="ulink">
+				<div className="contact-info">
+					<h2 className="contact-title">{t("contact.title")}</h2>
+					<p className="contact-lead">{t("contact.description")}</p>
+
+					<div className="contact-direct">
+						<a href={`mailto:${EMAIL}`} className="contact-email">
 							{EMAIL}
 						</a>
-						<button type="button" className="copy" onClick={copyEmail} data-copied={copied} aria-live="polite">
+						<button
+							type="button"
+							className="copy-btn"
+							onClick={copyEmail}
+							data-copied={copied}
+							aria-live="polite"
+						>
 							{copied ? t("contact.copied") : t("contact.copy")}
 						</button>
 					</div>
-					<dl className="contact-details reveal" style={{ "--d": "200ms" }}>
+
+					<dl className="contact-meta">
 						<div>
 							<dt>{t("contact.phone")}</dt>
 							<dd>
@@ -83,16 +83,26 @@ export default function Contact() {
 						<div>
 							<dt>{t("contact.location")}</dt>
 							<dd>
-								<a href="https://maps.google.com/?q=Oradea,Romania" target="_blank" rel="noopener noreferrer">
+								<a
+									href="https://maps.google.com/?q=Oradea,Romania"
+									target="_blank"
+									rel="noopener noreferrer"
+								>
 									{t("contact.locationValue")}
 								</a>
 							</dd>
 						</div>
 						<div>
 							<dt>{t("contact.elsewhere")}</dt>
-							<dd className="socials">
+							<dd className="contact-socials">
 								{SOCIALS.map(({ label, href, Icon }) => (
-									<a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label}>
+									<a
+										key={label}
+										href={href}
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label={label}
+									>
 										<Icon />
 									</a>
 								))}
@@ -101,23 +111,34 @@ export default function Contact() {
 					</dl>
 				</div>
 
-				<div className="form-card reveal" style={{ "--d": "120ms" }}>
+				<div className="contact-form-panel">
 					{status === "success" ? (
-						<div className="form-success" role="status">
-							<span className="check">
-								<Check width={22} height={22} />
+						<output className="form-success">
+							<span className="success-badge">
+								<Check width={20} height={20} />
 							</span>
 							<h3>{t("contact.form.successTitle")}</h3>
 							<p>{t("contact.form.successMessage")}</p>
-							<button type="button" className="btn btn-ghost btn-sm" onClick={() => setStatus("idle")}>
+							<button
+								type="button"
+								className="btn btn-secondary"
+								onClick={() => setStatus("idle")}
+							>
 								{t("contact.form.successCta")}
 							</button>
-						</div>
+						</output>
 					) : (
-						<form className="form" onSubmit={onSubmit}>
+						<form className="contact-form" onSubmit={onSubmit}>
 							<div className="field">
 								<label htmlFor="f-name">{t("contact.form.name")}</label>
-								<input id="f-name" name="name" required autoComplete="name" value={form.name} onChange={onChange} />
+								<input
+									id="f-name"
+									name="name"
+									required
+									autoComplete="name"
+									value={form.name}
+									onChange={onChange}
+								/>
 							</div>
 							<div className="field">
 								<label htmlFor="f-email">{t("contact.form.email")}</label>
@@ -133,22 +154,40 @@ export default function Contact() {
 							</div>
 							<div className="field full">
 								<label htmlFor="f-subject">{t("contact.form.subject")}</label>
-								<input id="f-subject" name="subject" required value={form.subject} onChange={onChange} />
+								<input
+									id="f-subject"
+									name="subject"
+									required
+									value={form.subject}
+									onChange={onChange}
+								/>
 							</div>
 							<div className="field full">
 								<label htmlFor="f-message">{t("contact.form.message")}</label>
-								<textarea id="f-message" name="message" required rows={5} value={form.message} onChange={onChange} />
+								<textarea
+									id="f-message"
+									name="message"
+									required
+									rows={5}
+									value={form.message}
+									onChange={onChange}
+								/>
 							</div>
 							{status === "error" && (
 								<p className="form-error" role="alert">
 									{t("contact.form.errorMessage")}
 								</p>
 							)}
-							<div className="form-foot">
+							<div className="form-footer">
 								<small>{t("contact.form.privacy")}</small>
-								<button type="submit" className="btn btn-primary" disabled={status === "sending"}>
-									{status === "sending" ? t("contact.form.sending") : t("contact.form.submit")}
-									<ArrowUpRight />
+								<button
+									type="submit"
+									className="btn btn-submit"
+									disabled={status === "sending"}
+								>
+									{status === "sending"
+										? t("contact.form.sending")
+										: t("contact.form.submit")}
 								</button>
 							</div>
 						</form>

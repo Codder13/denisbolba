@@ -1,34 +1,53 @@
-import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Bricolage_Grotesque, Plus_Jakarta_Sans } from "next/font/google";
 import Script from "next/script";
 import Providers from "@/components/Providers";
 import "./globals.css";
 
-const geist = Geist({ subsets: ["latin", "latin-ext"], variable: "--font-geist", display: "swap" });
-const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono", display: "swap" });
-const instrument = Instrument_Serif({
+const displayFont = Bricolage_Grotesque({
 	subsets: ["latin", "latin-ext"],
-	weight: "400",
-	style: ["normal", "italic"],
-	variable: "--font-instrument",
+	weight: ["500", "600", "700"],
+	variable: "--font-display",
 	display: "swap",
 });
 
-const title = "Denis Bolba — Web Designer & Entrepreneur";
+const bodyFont = Plus_Jakarta_Sans({
+	subsets: ["latin", "latin-ext"],
+	weight: ["400", "500", "600", "700"],
+	variable: "--font-body",
+	display: "swap",
+});
+
+const title = "Denis Bolba | Web Designer & Entrepreneur in Oradea";
 const description =
-	"Denis Bolba is a web designer and entrepreneur from Oradea, Romania, building fast, polished websites and online stores.";
+	"Denis Bolba is a web designer and entrepreneur in Oradea, Romania, designing and building fast, clear websites and online stores.";
 
 export const metadata = {
 	metadataBase: new URL("https://www.denisbolba.com"),
 	title,
 	description,
-	keywords: ["Denis Bolba", "web designer", "Oradea", "web design", "Next.js", "WordPress", "portfolio"],
+	keywords: [
+		"Denis Bolba",
+		"web designer",
+		"Oradea",
+		"web design",
+		"Next.js",
+		"WordPress",
+		"portfolio",
+	],
 	authors: [{ name: "Denis Bolba" }],
 	openGraph: {
 		title,
 		description,
 		url: "https://www.denisbolba.com",
 		siteName: "Denis Bolba",
-		images: [{ url: "/images/opt/profile.webp", width: 1200, height: 1600, alt: "Denis Bolba" }],
+		images: [
+			{
+				url: "/images/opt/profile.webp",
+				width: 1200,
+				height: 1600,
+				alt: "Denis Bolba",
+			},
+		],
 		locale: "en_US",
 		type: "website",
 	},
@@ -37,24 +56,23 @@ export const metadata = {
 };
 
 export const viewport = {
-	themeColor: "#0b0b0c",
-	colorScheme: "dark",
+	themeColor: "#F4F6F9",
+	colorScheme: "light",
 };
 
 export default function RootLayout({ children }) {
 	return (
 		<html
 			lang="en"
-			className={`${geist.variable} ${geistMono.variable} ${instrument.variable}`}
+			className={`${displayFont.variable} ${bodyFont.variable}`}
 			suppressHydrationWarning
 		>
 			<head>
-				{/* Enable reveal animations only when JS runs, so content never stays hidden */}
 				<script
-					// biome-ignore lint/security/noDangerouslySetInnerHtml: tiny bootstrap
+					// biome-ignore lint/security/noDangerouslySetInnerHtml: language hydration bootstrap
 					dangerouslySetInnerHTML={{
 						__html:
-							"document.documentElement.classList.add('js');try{var l=localStorage.getItem('language');if(l==='ro'||l==='en')document.documentElement.lang=l}catch(e){}",
+							"try{var l=localStorage.getItem('language');if(l==='ro'||l==='en')document.documentElement.lang=l}catch(e){}",
 					}}
 				/>
 			</head>

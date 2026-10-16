@@ -1,6 +1,13 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import {
+	createContext,
+	useCallback,
+	useContext,
+	useEffect,
+	useMemo,
+	useState,
+} from "react";
 import en from "../locales/en.json";
 import ro from "../locales/ro.json";
 
@@ -44,7 +51,9 @@ export const LanguageProvider = ({ children }) => {
 				else return key;
 			}
 			if (typeof value === "string") {
-				return value.replace(/\{(\w+)\}/g, (m, p) => (params[p] !== undefined ? params[p] : m));
+				return value.replace(/\{(\w+)\}/g, (m, p) =>
+					params[p] !== undefined ? params[p] : m,
+				);
 			}
 			return value;
 		},
@@ -56,5 +65,9 @@ export const LanguageProvider = ({ children }) => {
 		[language, setLanguage, toggleLanguage, t],
 	);
 
-	return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
+	return (
+		<LanguageContext.Provider value={value}>
+			{children}
+		</LanguageContext.Provider>
+	);
 };

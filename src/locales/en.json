@@ -7,117 +7,128 @@
 		"services": "Services",
 		"about": "About",
 		"contact": "Contact",
-		"cta": "Let's talk",
+		"cta": "Start a project",
 		"menu": "Menu",
 		"close": "Close",
-		"switchTo": "Switch to Romanian"
+		"switchTo": "Language"
 	},
 	"hero": {
-		"status": "Available for freelance work",
-		"localTime": "in Oradea",
-		"headlineA": "Design and development for brands that want to be",
-		"headlineEm": "taken seriously.",
-		"intro": "I'm Denis, a {age}-year-old web designer and entrepreneur from Oradea, Romania. I turn ideas into fast, polished websites for businesses that care about the details.",
+		"status": "Available for new projects",
+		"localTime": "local time in Oradea",
+		"headline": "Websites and online stores built to earn trust and sell.",
+		"intro": "I'm Denis Bolba, a {age}-year-old web designer and entrepreneur in Oradea, Romania. I design and build fast, clear commercial websites for businesses that care about how they show up online.",
 		"ctaPrimary": "Start a project",
-		"ctaSecondary": "See selected work",
-		"portraitAlt": "Portrait of Denis Bolba at night",
-		"caption": "Oradea, RO",
-		"metaRoleLabel": "Role",
-		"metaRole": "Web designer & entrepreneur",
-		"metaBasedLabel": "Based in",
-		"metaBased": "Oradea, Romania",
-		"metaFocusLabel": "Focus",
-		"metaFocus": "Web design, UI/UX, Next.js, WordPress",
-		"metaContactLabel": "Say hello",
-		"metaContact": "contact@denisbolba.com"
+		"ctaSecondary": "Explore live work",
+		"portraitAlt": "Portrait of Denis Bolba in Oradea",
+		"captionName": "Denis Bolba",
+		"captionRole": "Web designer & entrepreneur, Oradea"
 	},
 	"work": {
 		"label": "Selected work",
-		"title": "Real businesses, shipped and live.",
-		"intro": "A few recent projects: online stores and brand sites built to look sharp and sell.",
-		"visit": "Visit site",
+		"title": "Real businesses, designed, shipped, and live.",
+		"intro": "Online stores and brand websites built for everyday customers. Select a project to inspect the build or open the live site directly.",
+		"visit": "Open live site",
+		"deliverablesLabel": "Scope",
+		"stackLabel": "Built with",
+		"domainLabel": "Live domain",
+		"allProjectsLabel": "All shipped projects",
 		"projects": {
 			"lavanda": {
 				"title": "Lavanda Florărie",
-				"category": "E-commerce · Web design",
-				"description": "An elegant online store for a premium flower shop, with rich product galleries and a seamless ordering flow."
+				"category": "Online flower store",
+				"year": "2024",
+				"description": "An online storefront for a boutique flower shop, built around rich floral photography, bouquet filtering, and a frictionless same-day ordering flow.",
+				"deliverables": "Storefront design, product catalog, checkout flow",
+				"stack": ["Next.js", "Tailwind CSS", "WordPress"]
 			},
 			"douaroti": {
 				"title": "Două Roți",
-				"category": "E-commerce · WordPress",
-				"description": "A modern shop and service locator for a professional bicycle retailer, with an extensive catalog and custom integrations."
+				"category": "Bicycle retailer & service",
+				"year": "2024",
+				"description": "A complete commerce platform and service locator for a specialist bicycle and e-bike retailer, handling a large technical catalog with custom filtering.",
+				"deliverables": "E-commerce architecture, catalog structure, service booking",
+				"stack": ["WordPress", "WooCommerce", "Tailwind CSS", "JavaScript"]
 			},
 			"biciclete": {
 				"title": "Biciclete Copii",
-				"category": "E-commerce · Web app",
-				"description": "A specialised store for children's bicycles, with detailed catalogs and clear safety information for parents."
+				"category": "Children's bicycle store",
+				"year": "2024",
+				"description": "A dedicated store for children's bicycles that helps parents choose the right frame size and safety gear without guesswork.",
+				"deliverables": "Storefront UI, age & height sizing guide, product catalog",
+				"stack": ["Next.js", "React", "WordPress"]
 			}
 		}
 	},
 	"services": {
-		"label": "Services",
-		"title": "What I can do for you.",
+		"label": "Capabilities",
+		"title": "What I design and build.",
+		"intro": "Every project is handled end to end, from the first layout sketch in Figma to the live domain and store setup.",
+		"toolsLabel": "Core stack & tools",
 		"items": {
 			"design": {
 				"title": "Web design",
-				"description": "Distinctive, responsive websites with a clear hierarchy. Designed around your brand, not a template."
+				"scope": "Brand sites, landing pages, custom layouts",
+				"description": "Distinctive, responsive websites with a clear visual hierarchy, designed around your actual products and customers rather than a generic template."
 			},
 			"uiux": {
-				"title": "UI / UX",
-				"description": "Interfaces that are intuitive, accessible and pleasant to use, from wireframes to polished Figma prototypes."
+				"title": "Interface & UX design",
+				"scope": "Wireframes, Figma prototypes, design systems",
+				"description": "Clear navigation, readable typography, and calm buying flows that make it obvious what your business offers and how a customer can act."
 			},
 			"development": {
-				"title": "Development",
-				"description": "Fast, modern builds with React and Next.js that are SEO-friendly and easy to maintain."
+				"title": "Frontend development",
+				"scope": "React, Next.js, fast static & dynamic builds",
+				"description": "Clean, maintainable code that loads fast on mobile networks, ranks well in search engines, and stays reliable over time."
 			},
 			"wordpress": {
-				"title": "WordPress & e‑commerce",
-				"description": "WooCommerce stores and WordPress sites you can manage yourself, set up to convert."
+				"title": "WordPress & e-commerce",
+				"scope": "WooCommerce stores, catalogs, self-managed CMS",
+				"description": "Complete online stores and content sites that your team can update, restock, and run day to day without needing a developer for every change."
 			}
-		},
-		"toolsLabel": "Tools I use"
+		}
 	},
 	"about": {
 		"label": "About",
-		"title": "Curious by nature, obsessive about the details.",
-		"p1": "I got into web design out of plain curiosity and turned it into a profession. Today I run my own projects as an entrepreneur and design websites for businesses across Romania.",
-		"p2": "I care about the parts people feel but rarely notice: how fast a page loads, how the type sits, how a button responds. I want the sites I build to leave a lasting impression and to do their job.",
+		"title": "Curious by nature, deliberate about every detail.",
+		"p1": "I started building websites out of plain curiosity and turned that craft into my profession. Alongside client work, I launch and run my own e-commerce projects from Oradea, Romania, which means I approach every design from a business owner's perspective.",
+		"p2": "I care about the details people feel immediately: how quickly a page responds, how comfortable the typography is to read, and how effortless it feels to go from browsing a product to placing an order.",
 		"factName": "Name",
 		"factAge": "Age",
 		"factAgeValue": "{age} years",
-		"factFrom": "From",
+		"factFrom": "Based in",
 		"factFromValue": "Oradea, Romania",
-		"factEmail": "Email"
+		"factFocus": "Focus",
+		"factFocusValue": "Web design, Next.js, WooCommerce",
+		"factEmail": "Direct email"
 	},
 	"contact": {
 		"label": "Contact",
-		"titleA": "Have a project in mind?",
-		"titleEm": "Let's talk.",
-		"description": "Collaborations, consultations or just a hello. I usually reply within a day or two.",
-		"copy": "Copy",
-		"copied": "Copied",
+		"title": "Have a project in mind? Let's talk.",
+		"description": "Tell me what you're building or what needs a redesign. I read every message personally and usually reply within one business day.",
+		"copy": "Copy email",
+		"copied": "Email copied",
 		"phone": "Phone",
 		"location": "Location",
 		"locationValue": "Oradea, Romania",
-		"elsewhere": "Elsewhere",
+		"elsewhere": "Profiles",
 		"form": {
-			"name": "Name",
-			"email": "Email",
-			"subject": "Subject",
-			"message": "Tell me about your project",
+			"name": "Your name",
+			"email": "Email address",
+			"subject": "Project or subject",
+			"message": "What are you planning to build?",
 			"submit": "Send message",
-			"sending": "Sending…",
-			"successTitle": "Message sent.",
-			"successMessage": "Thanks for reaching out. I'll get back to you as soon as I can.",
-			"successCta": "Send another",
-			"errorMessage": "Something went wrong. Please try again, or email me directly at contact@denisbolba.com.",
-			"privacy": "Your details are only used to reply to you."
+			"sending": "Sending message…",
+			"successTitle": "Message received.",
+			"successMessage": "Thanks for reaching out. I'll review your note and get back to you shortly.",
+			"successCta": "Send another message",
+			"errorMessage": "The message couldn't be sent right now. Please try again or email contact@denisbolba.com directly.",
+			"privacy": "Your details are only used to reply to your inquiry."
 		}
 	},
 	"footer": {
-		"rights": "© {year} Denis Bolba",
-		"privacy": "Privacy",
-		"terms": "Terms",
+		"rights": "© {year} Denis Bolba. Built in Oradea, Romania.",
+		"privacy": "Privacy Policy",
+		"terms": "Terms of Service",
 		"cookies": "Cookies",
 		"top": "Back to top"
 	}

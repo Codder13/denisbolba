@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { EMAIL } from "./site";
 import Footer from "./Footer";
 import Header from "./Header";
+import { EMAIL } from "./site";
 
 export default function LegalPage({ content, updatedOn }) {
 	const { language } = useLanguage();
@@ -16,11 +16,11 @@ export default function LegalPage({ content, updatedOn }) {
 			<main id="main" className="legal">
 				<div className="wrap">
 					<div className="legal-inner">
-						<Link href="/" className="eyebrow ulink">
-							← {c.backToHome}
+						<Link href="/" className="text-link legal-back">
+							{c.backToHome}
 						</Link>
-						<h1 className="display">{c.title}</h1>
-						<p className="updated">
+						<h1 className="legal-title">{c.title}</h1>
+						<p className="legal-updated">
 							{c.lastUpdatedLabel}: {updatedOn}
 						</p>
 						{c.sections.map((s) => (
@@ -39,7 +39,10 @@ export default function LegalPage({ content, updatedOn }) {
 								)}
 								{s.key === "contact" && (
 									<p>
-										{c.contactLead} <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+										{c.contactLead}{" "}
+										<a href={`mailto:${EMAIL}`} className="text-link">
+											{EMAIL}
+										</a>
 									</p>
 								)}
 							</section>

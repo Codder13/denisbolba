@@ -10,7 +10,11 @@ export const getAge = () => new Date().getFullYear() - BIRTH_YEAR;
 export const SOCIALS = [
 	{ label: "GitHub", href: "https://github.com/Codder13", Icon: GitHub },
 	{ label: "YouTube", href: "https://youtube.com/@denisbolba", Icon: YouTube },
-	{ label: "Instagram", href: "https://instagram.com/denisbolba", Icon: Instagram },
+	{
+		label: "Instagram",
+		href: "https://instagram.com/denisbolba",
+		Icon: Instagram,
+	},
 ];
 
 export const NAV = ["work", "services", "about", "contact"];
