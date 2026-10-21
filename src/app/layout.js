@@ -33,7 +33,15 @@ export const metadata = {
 		type: "website",
 	},
 	twitter: { card: "summary_large_image", title, description },
-	icons: { icon: "/favicon.ico" },
+	icons: {
+		icon: [
+			{ url: "/favicon.ico", sizes: "48x48" },
+			{ url: "/favicon.svg", type: "image/svg+xml" },
+		],
+		apple: "/apple-touch-icon.png",
+		other: [{ rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#0b0b0c" }],
+	},
+	manifest: "/site.webmanifest",
 };
 
 export const viewport = {

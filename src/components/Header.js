@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { ArrowUpRight } from "./Icons";
+import { ArrowUpRight, BrandMark } from "./Icons";
 import { NAV } from "./site";
 
 export function LangSwitch() {
@@ -62,7 +62,7 @@ export default function Header({ home = true }) {
 				<div className="wrap hdr-row">
 					<a href={home ? "#top" : "/"} className="brand" aria-label="Denis Bolba — home">
 						<span className="brand-mark" aria-hidden="true">
-							d
+							<BrandMark />
 						</span>
 						Denis Bolba
 					</a>

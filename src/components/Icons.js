@@ -8,6 +8,17 @@ const base = {
 	"aria-hidden": true,
 };
 
+/* Stencil db monogram (01a accent). Bowls inherit currentColor, the stem (.bm-stem) is the accent. */
+export const BrandMark = (p) => (
+	<svg viewBox="18 12 64 76" aria-hidden="true" {...p}>
+		<g fill="none" stroke="currentColor" strokeWidth="8" strokeLinejoin="miter">
+			<path d="M42.5 38H33A11 11 0 0 0 22 49V73A11 11 0 0 0 33 84H42.5" />
+			<path d="M57.5 38H67A11 11 0 0 1 78 49V73A11 11 0 0 1 67 84H57.5" />
+		</g>
+		<polygon className="bm-stem" points="46,16 54,12 54,88 46,88" fill="currentColor" />
+	</svg>
+);
+
 export const ArrowUpRight = (p) => (
 	<svg {...base} {...p}>
 		<path d="M7 17 17 7M8 7h9v9" />
