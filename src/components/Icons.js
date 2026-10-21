@@ -8,7 +8,7 @@ const base = {
 	"aria-hidden": true,
 };
 
-/* Stencil db monogram (01a). Bowls inherit currentColor, stem uses .bm-stem so it can take the accent. */
+/* Stencil db monogram (01a accent). Bowls inherit currentColor, the stem (.bm-stem) is the accent. */
 export const BrandMark = (p) => (
 	<svg viewBox="18 12 64 76" aria-hidden="true" {...p}>
 		<g fill="none" stroke="currentColor" strokeWidth="8" strokeLinejoin="miter">

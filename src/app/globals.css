@@ -326,15 +326,13 @@ h3 {
 	overflow: visible;
 }
 .brand-mark .bm-stem {
-	transition:
-		fill 0.25s,
-		transform 0.35s var(--ease);
+	fill: var(--accent);
+	transition: transform 0.35s var(--ease);
 	transform-origin: 50% 88%;
 }
 .brand:hover .brand-mark .bm-stem,
 .brand:focus-visible .brand-mark .bm-stem {
-	fill: var(--accent);
-	transform: scaleY(1.06);
+	transform: scaleY(1.08);
 }
 .nav {
 	display: flex;
